@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Free Moving Estimate - A Good Guy Moving</title>
+    <meta name="description" content="Request a free, no-obligation moving estimate from A Good Guy Moving Ltd. Fill out our detailed form to get an accurate quote for your upcoming move.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com" integrity="sha384-Zzs41U7RxNvnFnL3DZCXQ9HLj8uZbP7/5EOoS3wR7jA/0NVw0JBcbZdihXcWwZ3a" crossorigin="anonymous"></script>
+    <!-- Add Content Security Policy meta tag -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light grey background */
+        }
+
+        /* Custom colors from NOTES.txt */
+        :root {
+            --color-orange-1: #ff6b00;
+            --color-orange-2: #ff7e20;
+            --color-dark-grey: #6b6b6c;
+            --color-grey-1: #b8afaf;
+            --color-grey-2: #c7c8cf;
+            --color-grey-3: #cfd0d1;
+            --color-black: #000000;
+        }
+
+        .text-orange-1 { color: var(--color-orange-1); }
+        .bg-orange-1 { background-color: var(--color-orange-1); }
+        .border-orange-1 { border-color: var(--color-orange-1); }
+        .text-orange-2 { color: var(--color-orange-2); }
+        .bg-orange-2 { background-color: var(--color-orange-2); }
+        .border-orange-2 { border-color: var(--color-orange-2); }
+        .text-dark-grey { color: var(--color-dark-grey); }
+        .bg-dark-grey { background-color: var(--color-dark-grey); }
+        .text-grey-1 { color: var(--color-grey-1); }
+        .bg-grey-1 { background-color: var(--color-grey-1); }
+        .text-grey-2 { color: var(--color-grey-2); }
+        .bg-grey-2 { background-color: var(--color-grey-2); }
+        .text-grey-3 { color: var(--color-grey-3); }
+        .bg-grey-3 { background-color: var(--color-grey-3); }
+        .text-black { color: var(--color-black); }
+        .bg-black { background-color: var(--color-black); }
+
+        /* Font styling based on NOTES.txt (using alternatives) */
+        /* Original font for 'A Good Guy Moving' was 'Airwaves' */
+        .font-title {
+            font-family: 'Roboto', sans-serif; /* Using Roboto Bold as fallback */
+            font-weight: 700;
+        }
+        /* Original font for subtitle was '56th Street' */
+        .font-subtitle {
+            font-family: 'Inter', sans-serif; /* Using Inter as fallback */
+        }
+
+        /* Style required field markers */
+        label span.required {
+            color: var(--color-orange-1); /* Orange-1 */
+            margin-left: 2px;
+            font-weight: bold;
+        }
+
+        /* Custom focus ring color */
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--color-orange-2); /* Orange-2 */
+            box-shadow: 0 0 0 2px rgba(255, 126, 32, 0.5); /* Orange-2 with transparency */
+        }
+        /* Style checkboxes and radios */
+        input[type="checkbox"], input[type="radio"] {
+            accent-color: var(--color-orange-1); /* Orange-1 */
+        }
+
+        /* Hide elements by default (for conditional display) */
+        .hidden-conditional {
+            display: none;
+        }
+
+        /* Styling for inventory grid */
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .inventory-item label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            color: #374151; /* text-gray-700 */
+        }
+        .inventory-item input[type="number"] {
+            width: 100%;
+        }
+
+        /* Terms and conditions box */
+        .terms-box {
+            border: 1px solid var(--color-grey-2);
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 0.375rem; /* rounded-md */
+            background-color: #f9fafb; /* bg-gray-50 */
+        }
+        .terms-box h4 {
+            font-weight: bold;
+            color: var(--color-dark-grey);
+            margin-bottom: 0.75rem;
+        }
+        .terms-box ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+            font-size: 0.875rem; /* text-sm */
+            color: #4b5563; /* text-gray-600 */
+        }
+         .terms-box li {
+            margin-bottom: 0.5rem;
+         }
+
+    </style>
+</head>
+<body class="bg-grey-3 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+
+        <div class="text-center mb-10">
+            <h1 class="font-title text-4xl font-bold text-orange-1 mb-2">A Good Guy Moving</h1>
+            <h2 class="font-subtitle text-2xl text-dark-grey">We take the stress out of moving!</h2>
+            <p class="mt-4 text-lg text-gray-600">Fill out the form below for a free, no-obligation estimate.</p>
+        </div>
+
+        <form id="moving-estimate-form" method="POST" data-netlify="true" name="estimate" netlify-honeypot="bot-field" autocomplete="on">
+            <input type="hidden" name="form-name" value="estimate">
+            <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <section class="mb-8 border-b border-grey-2 pb-6">
+                <h3 class="text-xl font-semibold text-dark-grey mb-4">1. Contact Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label for="full_name" class="block text-sm font-medium text-gray-700">Full Name<span class="required">*</span></label>
+                        <input type="text" id="full_name" name="full_name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="phone_number" class="block text-sm font-medium text-gray-700">Phone Number<span class="required">*</span></label>
+                        <input type="tel" id="phone_number" name="phone_number" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address<span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8 border-b border-grey-2 pb-6">
+                <h3 class="text-xl font-semibold text-dark-grey mb-4">2. Moving Details</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                    <div>
+                        <label for="move_date" class="block text-sm font-medium text-gray-700">Move Date<span class="required">*</span></label>
+                        <input type="date" id="move_date" name="move_date" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                    </div>
+                     <div>
+                        <label class="block text-sm font-medium text-gray-700">Preferred Time<span class="required">*</span> <span class="text-xs text-gray-500">(Select one or both)</span></label>
+                        <div class="mt-2 space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="move_time[]" value="Morning" class="rounded border-gray-300 text-orange-1 shadow-sm focus:border-orange-2 focus:ring focus:ring-offset-0 focus:ring-orange-2 focus:ring-opacity-50">
+                                <span class="ml-2 text-sm text-gray-600">Morning</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="move_time[]" value="Afternoon" class="rounded border-gray-300 text-orange-1 shadow-sm focus:border-orange-2 focus:ring focus:ring-offset-0 focus:ring-orange-2 focus:ring-opacity-50">
+                                <span class="ml-2 text-sm text-gray-600">Afternoon</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <fieldset class="md:col-span-2 border border-grey-1 p-4 rounded-md mt-4">
+                        <legend class="text-base font-medium text-gray-900 px-2">Current Address<span class="required">*</span></legend>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
+                             <div class="md:col-span-3">
+                                 <label for="current_address" class="block text-sm font-medium text-gray-700 sr-only">Current Street Address</label>
+                                 <input type="text" id="current_address" name="current_address" required placeholder="Street Address" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             </div>
+                             <div>
+                                 <label for="current_city" class="block text-sm font-medium text-gray-700 sr-only">Current City</label>
+                                 <input type="text" id="current_city" name="current_city" placeholder="City" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             </div>
+                             <div>
+                                 <label for="current_postal_code" class="block text-sm font-medium text-gray-700 sr-only">Current Postal Code</label>
+                                 <input type="text" id="current_postal_code" name="current_postal_code" placeholder="Postal Code" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             </div>
+                        </div>
+                    </fieldset>
+
+                     <fieldset class="md:col-span-2 border border-grey-1 p-4 rounded-md mt-4">
+                        <legend class="text-base font-medium text-gray-900 px-2">New Address<span class="required">*</span></legend>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
+                             <div class="md:col-span-3">
+                                 <label for="new_address" class="block text-sm font-medium text-gray-700 sr-only">New Street Address</label>
+                                 <input type="text" id="new_address" name="new_address" required placeholder="Street Address" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             </div>
+                             <div>
+                                 <label for="new_city" class="block text-sm font-medium text-gray-700 sr-only">New City</label>
+                                 <input type="text" id="new_city" name="new_city" placeholder="City" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             </div>
+                             <div>
+                                 <label for="new_postal_code" class="block text-sm font-medium text-gray-700 sr-only">New Postal Code</label>
+                                 <input type="text" id="new_postal_code" name="new_postal_code" placeholder="Postal Code" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </section>
+
+            <section class="mb-8 border-b border-grey-2 pb-6">
+                <h3 class="text-xl font-semibold text-dark-grey mb-4">3. Move Type<span class="required">*</span></h3>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <input id="move_type_house" name="move_type" type="radio" value="House" required class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
+                        <label for="move_type_house" class="ml-3 block text-sm font-medium text-gray-700">House</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="move_type_apartment" name="move_type" type="radio" value="Apartment/Condo" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
+                        <label for="move_type_apartment" class="ml-3 block text-sm font-medium text-gray-700">Apartment/Condo</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="move_type_office" name="move_type" type="radio" value="Office/Commercial" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
+                        <label for="move_type_office" class="ml-3 block text-sm font-medium text-gray-700">Office/Commercial</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="move_type_storage" name="move_type" type="radio" value="Storage Move" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
+                        <label for="move_type_storage" class="ml-3 block text-sm font-medium text-gray-700">Storage Move</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="move_type_other" name="move_type" type="radio" value="Other" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
+                        <label for="move_type_other" class="ml-3 block text-sm font-medium text-gray-700">Other</label>
+                        <input type="text" name="move_type_other_specify" placeholder="Please specify" class="ml-4 flex-1 rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 text-sm p-1">
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8 border-b border-grey-2 pb-6">
+                <h3 class="text-xl font-semibold text-dark-grey mb-4">4. Home Details</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <fieldset class="border border-grey-1 p-4 rounded-md">
+                        <legend class="text-base font-medium text-gray-900 px-2">Current Home</legend>
+                        <div class="space-y-4 mt-2">
+                            <div>
+                                <label for="current_bedrooms" class="block text-sm font-medium text-gray-700">Number of Bedrooms</label>
+                                <select id="current_bedrooms" name="current_bedrooms" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                                    <option>Studio</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Elevator Available?<span class="required">*</span></label>
+                                <div class="mt-1 flex gap-x-4">
+                                    <label><input type="radio" name="current_elevator" value="Yes" required class="mr-1"> Yes</label>
+                                    <label><input type="radio" name="current_elevator" value="No" required class="mr-1"> No</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Stairs?</label>
+                                <div class="mt-1 flex gap-x-4 items-center">
+                                    <label><input type="radio" name="current_stairs" value="Yes" class="mr-1" onclick="toggleFlightsInput('current', true)"> Yes</label>
+                                    <label><input type="radio" name="current_stairs" value="No" checked class="mr-1" onclick="toggleFlightsInput('current', false)"> No</label>
+                                    <div id="current_flights_container" class="hidden-conditional ml-2 flex-1">
+                                        <label for="current_flights" class="sr-only">How many flights?</label>
+                                        <input type="number" id="current_flights" name="current_flights" placeholder="How many flights?" min="0" class="w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 text-sm p-1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="border border-grey-1 p-4 rounded-md">
+                        <legend class="text-base font-medium text-gray-900 px-2">New Home</legend>
+                        <div class="space-y-4 mt-2">
+                            <div>
+                                <label for="new_bedrooms" class="block text-sm font-medium text-gray-700">Number of Bedrooms</label>
+                                <select id="new_bedrooms" name="new_bedrooms" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                                    <option>Studio</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Elevator Available?<span class="required">*</span></label>
+                                <div class="mt-1 flex gap-x-4">
+                                    <label><input type="radio" name="new_elevator" value="Yes" required class="mr-1"> Yes</label>
+                                    <label><input type="radio" name="new_elevator" value="No" required class="mr-1"> No</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Stairs?</label>
+                                <div class="mt-1 flex gap-x-4 items-center">
+                                    <label><input type="radio" name="new_stairs" value="Yes" class="mr-1" onclick="toggleFlightsInput('new', true)"> Yes</label>
+                                    <label><input type="radio" name="new_stairs" value="No" checked class="mr-1" onclick="toggleFlightsInput('new', false)"> No</label>
+                                     <div id="new_flights_container" class="hidden-conditional ml-2 flex-1">
+                                        <label for="new_flights" class="sr-only">How many flights?</label>
+                                        <input type="number" id="new_flights" name="new_flights" placeholder="How many flights?" min="0" class="w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 text-sm p-1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </section>
+
+            <section class="mb-8 border-b border-grey-2 pb-6">
+                <h3 class="text-xl font-semibold text-dark-grey mb-4">5. Moving Services Needed <span class="text-sm font-normal text-gray-500">(Check all that apply)</span></h3>
+                <div class="space-y-2">
+                    <div class="flex items-start">
+                        <input id="service_disassembly" name="services_needed[]" type="checkbox" value="Furniture Disassembly & Reassembly" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
+                        <label for="service_disassembly" class="ml-3 block text-sm font-medium text-gray-700">Furniture Disassembly & Reassembly</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input id="service_specialty" name="services_needed[]" type="checkbox" value="Specialty Items" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
+                        <label for="service_specialty" class="ml-3 block text-sm font-medium text-gray-700">Specialty Items (Piano, Safe, Pool Table, Treadmill, Peloton, etc.)</label>
+                    </div>
+                    <div class="flex items-start">
+                        <input id="service_heavy" name="services_needed[]" type="checkbox" value="Items over 300lbs" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
+                        <label for="service_heavy" class="ml-3 block text-sm font-medium text-gray-700">Items over 300lbs</label>
+                    </div>
+                     <div class="flex items-start">
+                        <input id="service_junk" name="services_needed[]" type="checkbox" value="Junk Removal" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
+                        <label for="service_junk" class="ml-3 block text-sm font-medium text-gray-700">Junk Removal</label>
+                    </div>
+                </div>
+            </section>
+
+             <section class="mb-8 border-b border-grey-2 pb-6">
+                <h3 class="text-xl font-semibold text-dark-grey mb-4">6. Inventory <span class="text-sm font-normal text-gray-500">(Enter quantity for each item)</span></h3>
+                <div class="inventory-grid">
+                    <div class="inventory-item">
+                        <label for="inv_table_chair">Table/Chair</label>
+                        <input type="number" id="inv_table_chair" name="inventory[table_chair]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_bar_stools">Bar / Bar stools</label>
+                        <input type="number" id="inv_bar_stools" name="inventory[bar_stools]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_large_appliances">Large Appliances</label>
+                        <input type="number" id="inv_large_appliances" name="inventory[large_appliances]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_cabinets">Cabinets</label>
+                        <input type="number" id="inv_cabinets" name="inventory[cabinets]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_washer_dryer">Washer/Dryer</label>
+                        <input type="number" id="inv_washer_dryer" name="inventory[washer_dryer]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_sectional_couch">Sectional Couch</label>
+                        <input type="number" id="inv_sectional_couch" name="inventory[sectional_couch]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_couch">Couch</label>
+                        <input type="number" id="inv_couch" name="inventory[couch]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_love_seat">Love Seat</label>
+                        <input type="number" id="inv_love_seat" name="inventory[love_seat]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_living_room_chairs">Living room Chairs</label>
+                        <input type="number" id="inv_living_room_chairs" name="inventory[living_room_chairs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_coffee_tables">Coffee Tables</label>
+                        <input type="number" id="inv_coffee_tables" name="inventory[coffee_tables]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_end_tables">End Tables</label>
+                        <input type="number" id="inv_end_tables" name="inventory[end_tables]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_lamps">Lamps</label>
+                        <input type="number" id="inv_lamps" name="inventory[lamps]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_rugs">Rugs</label>
+                        <input type="number" id="inv_rugs" name="inventory[rugs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_fireplace">Fireplace</label>
+                        <input type="number" id="inv_fireplace" name="inventory[fireplace]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_tvs">TV's</label>
+                        <input type="number" id="inv_tvs" name="inventory[tvs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_cribs">Cribs</label>
+                        <input type="number" id="inv_cribs" name="inventory[cribs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_mattress_king">Mattress (King)</label>
+                        <input type="number" id="inv_mattress_king" name="inventory[mattress_king]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_mattress_queen">Mattress (Queen)</label>
+                        <input type="number" id="inv_mattress_queen" name="inventory[mattress_queen]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_mattress_full">Mattress (Full)</label>
+                        <input type="number" id="inv_mattress_full" name="inventory[mattress_full]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_night_stands">Night Stands</label>
+                        <input type="number" id="inv_night_stands" name="inventory[night_stands]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_dressers">Dressers</label>
+                        <input type="number" id="inv_dressers" name="inventory[dressers]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_hi_boys">Hi Boys</label>
+                        <input type="number" id="inv_hi_boys" name="inventory[hi_boys]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_chests">Chests</label>
+                        <input type="number" id="inv_chests" name="inventory[chests]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_stools">Stools</label>
+                        <input type="number" id="inv_stools" name="inventory[stools]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_mirrors">Mirrors</label>
+                        <input type="number" id="inv_mirrors" name="inventory[mirrors]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_book_shelfs">Book Shelfs</label>
+                        <input type="number" id="inv_book_shelfs" name="inventory[book_shelfs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_file_cabinets">File Cabinets</label>
+                        <input type="number" id="inv_file_cabinets" name="inventory[file_cabinets]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_desk">Desk</label>
+                        <input type="number" id="inv_desk" name="inventory[desk]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_office_chair">Office Chair</label>
+                        <input type="number" id="inv_office_chair" name="inventory[office_chair]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_piano">Piano</label>
+                        <input type="number" id="inv_piano" name="inventory[piano]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_treadmill">Treadmill</label>
+                        <input type="number" id="inv_treadmill" name="inventory[treadmill]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_workout_equipment">Workout Equipment</label>
+                        <input type="number" id="inv_workout_equipment" name="inventory[workout_equipment]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_tv_stands">TV Stands</label>
+                        <input type="number" id="inv_tv_stands" name="inventory[tv_stands]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_bed_frame">Bed frame</label>
+                        <input type="number" id="inv_bed_frame" name="inventory[bed_frame]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_wall_art">Wall Art Small/Large</label>
+                        <input type="number" id="inv_wall_art" name="inventory[wall_art]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                    <div class="inventory-item">
+                        <label for="inv_mirrors_2">Mirrors (General)</label>
+                        <input type="number" id="inv_mirrors_2" name="inventory[mirrors_general]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_grill">Grill</label>
+                        <input type="number" id="inv_grill" name="inventory[grill]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_outside_furniture">Outside Furniture</label>
+                        <input type="number" id="inv_outside_furniture" name="inventory[outside_furniture]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_tools">Tools</label>
+                        <input type="number" id="inv_tools" name="inventory[tools]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_tires">Tires</label>
+                        <input type="number" id="inv_tires" name="inventory[tires]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_sport_gear">Sport Gear</label>
+                        <input type="number" id="inv_sport_gear" name="inventory[sport_gear]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_pool_tables">Pool Tables</label>
+                        <input type="number" id="inv_pool_tables" name="inventory[pool_tables]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_atvs">ATVs</label>
+                        <input type="number" id="inv_atvs" name="inventory[atvs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_lawnmower">Lawnmower</label>
+                        <input type="number" id="inv_lawnmower" name="inventory[lawnmower]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                     <div class="inventory-item">
+                        <label for="inv_bicycles">Bicycles (Adult/Children)</label>
+                        <input type="number" id="inv_bicycles" name="inventory[bicycles]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <label for="num_boxes" class="block text-sm font-medium text-gray-700">Please Indicate the Number of boxes<span class="required">*</span></label>
+                    <input type="number" id="num_boxes" name="num_boxes" required min="0" value="0" class="mt-1 block w-full max-w-xs rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                </div>
+            </section>
+
+            <section class="mb-8">
+                 <h3 class="text-xl font-semibold text-dark-grey mb-4">7. Additional Information</h3>
+                 <label for="additional_info" class="block text-sm font-medium text-gray-700">Any other requests, concerns, or details about your move?</label>
+                 <textarea id="additional_info" name="additional_info" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50"></textarea>
+            </section>
+
+            <div class="mt-8 text-center">
+                <button type="submit" class="inline-flex justify-center py-3 px-6 border border-transparent shadow-md text-lg font-medium rounded-md text-white bg-orange-1 hover:bg-orange-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-2 transition duration-150 ease-in-out">
+                    Get My Free Estimate
+                </button>
+            </div>
+
+             <section class="terms-box">
+                <h4>Terms and Conditions of Estimate</h4>
+                <ol>
+                    <li><strong>Non-Binding Estimate:</strong> The estimate provided is based on the information given at the time of inquiry. This estimate is not a guaranteed price and is subject to change based on factors such as additional items, time required, unforeseen circumstances, or changes to the moving conditions.</li>
+                    <li><strong>Accuracy of Inventory & Details:</strong> The customer is responsible for providing an accurate description of the inventory, access conditions (stairs, elevators, long carry distances, etc.), and any special handling requirements. Any discrepancies may result in additional charges.</li>
+                    <li><strong>Hourly & Flat Rate Pricing:</strong>
+                        <ul class="list-disc ml-5 mt-1">
+                            <li>Hourly rates apply from the time our crew arrives at the pickup location until the completion of the move, including loading, unloading, and any required travel time.</li>
+                            <li>Flat-rate pricing, if applicable, is based on the agreed-upon scope of work and does not cover additional services requested on the moving day.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Additional Charges:</strong> The following may result in extra charges:
+                        <ul class="list-disc ml-5 mt-1">
+                            <li>Additional items or services not included in the original estimate</li>
+                            <li>Disassembly/reassembly of furniture</li>
+                            <li>Packing/unpacking services</li>
+                            <li>Long carry distances, stairs, or elevator use not disclosed prior</li>
+                            <li>Delays caused by the customer (waiting time, incomplete packing, lack of access, etc.)</li>
+                            <li>Storage fees if items need to be held before delivery</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cancellation & Rescheduling Policy:</strong>
+                         <ul class="list-disc ml-5 mt-1">
+                            <li>Cancellations made less than 48 hours before the scheduled move may be subject to a cancellation fee.</li>
+                            <li>Rescheduling is subject to availability and may affect the final cost.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+        </form>
+        </div>
+
+    <script>
+        // Function to show/hide the 'number of flights' input based on radio button selection
+        function toggleFlightsInput(locationPrefix, show) {
+            const container = document.getElementById(`${locationPrefix}_flights_container`);
+            const input = document.getElementById(`${locationPrefix}_flights`);
+            if (show) {
+                container.style.display = 'block'; // Or 'flex', 'inline-block' depending on layout needs
+                input.required = true; // Make it required only when visible
+            } else {
+                container.style.display = 'none';
+                input.required = false; // Not required when hidden
+                input.value = ''; // Clear the value if hidden
+            }
+        }
+
+        // Initialize the state on page load in case a 'Yes' radio is pre-selected (though default is 'No')
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleFlightsInput('current', document.querySelector('input[name="current_stairs"][value="Yes"]:checked') !== null);
+            toggleFlightsInput('new', document.querySelector('input[name="new_stairs"][value="Yes"]:checked') !== null);
+        });
+
+        // Optional: Add validation for time selection (at least one checkbox checked)
+        const form = document.getElementById('moving-estimate-form');
+        const timeCheckboxes = form.querySelectorAll('input[name="move_time[]"]');
+
+        form.addEventListener('submit', function(event) {
+            let timeChecked = false;
+            timeCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    timeChecked = true;
+                }
+            });
+
+            if (!timeChecked) {
+                // Find the first time checkbox to focus on or display message near
+                const firstTimeCheckboxLabel = timeCheckboxes[0].closest('label');
+                alert('Please select at least one preferred move time (Morning or Afternoon).'); // Consider using a more user-friendly notification instead of alert()
+                if (firstTimeCheckboxLabel) {
+                     firstTimeCheckboxLabel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                     // Optionally highlight the section
+                     const timeSection = firstTimeCheckboxLabel.closest('div');
+                     timeSection.style.outline = '2px solid red';
+                     setTimeout(() => { timeSection.style.outline = 'none'; }, 3000);
+                }
+                event.preventDefault(); // Prevent form submission
+                return false;
+            }
+
+            // Add other custom validations if needed
+        });
+
+    </script>
+
+</body>
+</html>

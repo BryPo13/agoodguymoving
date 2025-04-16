@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Browser Testing Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #ff6b00;
+        }
+        .checklist {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .checklist-item {
+            margin-bottom: 10px;
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .browser-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .browser {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 150px;
+        }
+        .notes {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cross-Browser Testing Checklist</h1>
+    
+    <div class="notes">
+        <p><strong>Note:</strong> This checklist is designed to help ensure the website works correctly across different browsers and devices. Test each page of the website in the browsers listed below and check off the items as you verify them.</p>
+    </div>
+    
+    <h2>Browsers to Test</h2>
+    <div class="browser-list">
+        <div class="browser">
+            <h3>Desktop</h3>
+            <ul>
+                <li>Chrome (latest)</li>
+                <li>Firefox (latest)</li>
+                <li>Safari (latest)</li>
+                <li>Edge (latest)</li>
+            </ul>
+        </div>
+        <div class="browser">
+            <h3>Mobile</h3>
+            <ul>
+                <li>Chrome on Android</li>
+                <li>Safari on iOS</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h2>Testing Checklist</h2>
+    
+    <div class="checklist">
+        <h3>Layout & Design</h3>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout-responsive">
+            <label for="layout-responsive">Layout is responsive and adapts to different screen sizes</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="layout-consistent">
+            <label for="layout-consistent">Layout is consistent across browsers</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="fonts-rendering">
+            <label for="fonts-rendering">Fonts render correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="images-display">
+            <label for="images-display">Images display correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="colors-consistent">
+            <label for="colors-consistent">Colors are consistent</label>
+        </div>
+    </div>
+    
+    <div class="checklist">
+        <h3>Navigation & Links</h3>
+        <div class="checklist-item">
+            <input type="checkbox" id="nav-works">
+            <label for="nav-works">Navigation menu works correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="links-work">
+            <label for="links-work">All links work correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="back-button">
+            <label for="back-button">Browser back button works as expected</label>
+        </div>
+    </div>
+    
+    <div class="checklist">
+        <h3>Forms</h3>
+        <div class="checklist-item">
+            <input type="checkbox" id="forms-display">
+            <label for="forms-display">Forms display correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="form-validation">
+            <label for="form-validation">Form validation works correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="form-submission">
+            <label for="form-submission">Form submission works correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="error-messages">
+            <label for="error-messages">Error messages display correctly</label>
+        </div>
+    </div>
+    
+    <div class="checklist">
+        <h3>Functionality</h3>
+        <div class="checklist-item">
+            <input type="checkbox" id="js-works">
+            <label for="js-works">JavaScript functionality works correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="animations">
+            <label for="animations">Animations and transitions work correctly</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="interactive-elements">
+            <label for="interactive-elements">Interactive elements (buttons, dropdowns, etc.) work correctly</label>
+        </div>
+    </div>
+    
+    <div class="checklist">
+        <h3>Performance</h3>
+        <div class="checklist-item">
+            <input type="checkbox" id="load-time">
+            <label for="load-time">Page load time is acceptable</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="scrolling">
+            <label for="scrolling">Scrolling is smooth</label>
+        </div>
+        <div class="checklist-item">
+            <input type="checkbox" id="no-console-errors">
+            <label for="no-console-errors">No console errors</label>
+        </div>
+    </div>
+    
+    <h2>Issues Found</h2>
+    <textarea rows="10" style="width: 100%; padding: 10px;" placeholder="Note any issues found during testing here..."></textarea>
+    
+    <script>
+        // Save checkbox state to localStorage
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            // Load saved state
+            const savedState = localStorage.getItem(checkbox.id);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+            
+            // Save state on change
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+            });
+        });
+        
+        // Save notes to localStorage
+        const notesTextarea = document.querySelector('textarea');
+        
+        // Load saved notes
+        const savedNotes = localStorage.getItem('browser-testing-notes');
+        if (savedNotes) {
+            notesTextarea.value = savedNotes;
+        }
+        
+        // Save notes on input
+        notesTextarea.addEventListener('input', () => {
+            localStorage.setItem('browser-testing-notes', notesTextarea.value);
+        });
+    </script>
+</body>
+</html>
