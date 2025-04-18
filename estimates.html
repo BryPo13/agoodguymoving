@@ -6,308 +6,385 @@
     <title>Get a Free Moving Estimate - A Good Guy Moving</title>
     <meta name="description" content="Request a free, no-obligation moving estimate from A Good Guy Moving Ltd. Fill out our detailed form to get an accurate quote for your upcoming move.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com" integrity="sha384-Zzs41U7RxNvnFnL3DZCXQ9HLj8uZbP7/5EOoS3wR7jA/0NVw0JBcbZdihXcWwZ3a" crossorigin="anonymous"></script>
-    <!-- Add Content Security Policy meta tag -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Apply Inter font globally */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9fafb; /* Light grey background */
+        /* Add specific styles for estimate form elements if needed, */
+        /* or refine existing styles in styles.css */
+
+        .estimate-form-section {
+            padding: 4rem 0;
+            background-color: var(--color-white);
+            border-radius: 20px;
+            margin: 2rem auto; /* Added margin */
+            width: 95%;
+            max-width: 900px; /* Adjusted max-width for form */
+            box-shadow: var(--box-shadow-soft);
         }
 
-        /* Custom colors from NOTES.txt */
-        :root {
-            --color-orange-1: #ff6b00;
-            --color-orange-2: #ff7e20;
-            --color-dark-grey: #6b6b6c;
-            --color-grey-1: #b8afaf;
-            --color-grey-2: #c7c8cf;
-            --color-grey-3: #cfd0d1;
-            --color-black: #000000;
+        .estimate-form-section h1,
+        .estimate-form-section h2 {
+             text-align: center;
+             margin-bottom: 1rem;
+        }
+         .estimate-form-section h1 {
+             font-size: 2.5rem; /* Example size */
+             color: var(--color-orange-1);
+         }
+         .estimate-form-section h2 {
+             font-size: 1.5rem; /* Example size */
+             color: var(--color-dark-grey);
+             font-weight: 500; /* Lighter than h1 */
+             margin-bottom: 2rem;
+         }
+
+        .form-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-grey-2);
+        }
+         .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 1.5rem;
+         }
+
+        .form-section h3 {
+            font-size: 1.5rem;
+            color: var(--color-dark-grey);
+            margin-bottom: 1.5rem;
+            text-align: left; /* Override default centered h3 */
+            border-bottom: 2px solid var(--color-orange-1);
+            padding-bottom: 0.5rem;
+            display: inline-block; /* Make border only span text width */
         }
 
-        .text-orange-1 { color: var(--color-orange-1); }
-        .bg-orange-1 { background-color: var(--color-orange-1); }
-        .border-orange-1 { border-color: var(--color-orange-1); }
-        .text-orange-2 { color: var(--color-orange-2); }
-        .bg-orange-2 { background-color: var(--color-orange-2); }
-        .border-orange-2 { border-color: var(--color-orange-2); }
-        .text-dark-grey { color: var(--color-dark-grey); }
-        .bg-dark-grey { background-color: var(--color-dark-grey); }
-        .text-grey-1 { color: var(--color-grey-1); }
-        .bg-grey-1 { background-color: var(--color-grey-1); }
-        .text-grey-2 { color: var(--color-grey-2); }
-        .bg-grey-2 { background-color: var(--color-grey-2); }
-        .text-grey-3 { color: var(--color-grey-3); }
-        .bg-grey-3 { background-color: var(--color-grey-3); }
-        .text-black { color: var(--color-black); }
-        .bg-black { background-color: var(--color-black); }
-
-        /* Font styling based on NOTES.txt (using alternatives) */
-        /* Original font for 'A Good Guy Moving' was 'Airwaves' */
-        .font-title {
-            font-family: 'Roboto', sans-serif; /* Using Roboto Bold as fallback */
-            font-weight: 700;
-        }
-        /* Original font for subtitle was '56th Street' */
-        .font-subtitle {
-            font-family: 'Inter', sans-serif; /* Using Inter as fallback */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
-        /* Style required field markers */
-        label span.required {
-            color: var(--color-orange-1); /* Orange-1 */
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-dark-grey);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-grey-2);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition-standard);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-orange-1);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+        }
+         .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex; /* Use flex for alignment */
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: normal; /* Make labels less bold than group label */
+        }
+         .radio-group input[type="radio"],
+         .checkbox-group input[type="checkbox"] {
+            margin-right: 0.75rem;
+            accent-color: var(--color-orange-1); /* Style radio/checkbox color */
+             width: 1em; /* Consistent size */
+             height: 1em;
+         }
+
+        .required {
+            color: var(--color-orange-1);
             margin-left: 2px;
             font-weight: bold;
         }
 
-        /* Custom focus ring color */
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--color-orange-2); /* Orange-2 */
-            box-shadow: 0 0 0 2px rgba(255, 126, 32, 0.5); /* Orange-2 with transparency */
-        }
-        /* Style checkboxes and radios */
-        input[type="checkbox"], input[type="radio"] {
-            accent-color: var(--color-orange-1); /* Orange-1 */
-        }
+         fieldset {
+             border: 1px solid var(--color-grey-1);
+             padding: 1.5rem;
+             border-radius: 8px;
+             margin-top: 1rem;
+         }
+         legend {
+             font-weight: 600;
+             color: var(--color-dark-grey);
+             padding: 0 0.5rem;
+             margin-left: 0.5rem; /* Align with padding */
+         }
 
-        /* Hide elements by default (for conditional display) */
-        .hidden-conditional {
-            display: none;
-        }
+         .address-grid {
+             display: grid;
+             grid-template-columns: 1fr; /* Default to single column */
+             gap: 1rem;
+         }
+         @media (min-width: 768px) { /* Adjust grid on larger screens */
+             .address-grid {
+                 grid-template-columns: repeat(3, 1fr);
+             }
+             .address-grid .street-address {
+                 grid-column: 1 / -1; /* Span full width */
+             }
+         }
 
-        /* Styling for inventory grid */
-        .inventory-grid {
+         /* Inventory Grid */
+         .inventory-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        .inventory-item label {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax */
+            gap: 1rem; /* Consistent gap */
+         }
+         .inventory-item label {
             display: block;
             margin-bottom: 0.25rem;
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500; /* font-medium */
-            color: #374151; /* text-gray-700 */
-        }
-        .inventory-item input[type="number"] {
-            width: 100%;
-        }
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-dark-grey);
+         }
+         .inventory-item input[type="number"] {
+             padding: 0.5rem; /* Smaller padding for inventory */
+             font-size: 0.9rem;
+         }
 
-        /* Terms and conditions box */
+        /* Terms Box */
         .terms-box {
             border: 1px solid var(--color-grey-2);
-            padding: 1rem;
-            margin-top: 2rem;
-            border-radius: 0.375rem; /* rounded-md */
-            background-color: #f9fafb; /* bg-gray-50 */
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-radius: 8px;
+            background-color: #f9f9f9; /* Light background */
         }
         .terms-box h4 {
-            font-weight: bold;
+            font-weight: 700; /* Bold heading */
             color: var(--color-dark-grey);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            text-align: left; /* Align left */
         }
         .terms-box ol {
             list-style-type: decimal;
             margin-left: 1.5rem;
-            font-size: 0.875rem; /* text-sm */
-            color: #4b5563; /* text-gray-600 */
+            font-size: 0.9rem;
+            color: #4b5563; /* Slightly darker grey */
         }
          .terms-box li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
          }
+        .terms-box ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+         /* Conditional display utility class */
+        .hidden-conditional {
+            display: none;
+        }
+
+        /* Center the submit button */
+        .submit-button-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
 
     </style>
 </head>
-<body class="bg-grey-3 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-xl">
-
-        <div class="text-center mb-10">
-            <h1 class="font-title text-4xl font-bold text-orange-1 mb-2">A Good Guy Moving</h1>
-            <h2 class="font-subtitle text-2xl text-dark-grey">We take the stress out of moving!</h2>
-            <p class="mt-4 text-lg text-gray-600">Fill out the form below for a free, no-obligation estimate.</p>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                 <a href="index.html"><img src="logos/Color logo - no background.svg" alt="A Good Guy Moving Ltd. Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                     <li><a href="estimates.html" style="display: none;" class="cta-button active">Get an Estimate</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <section class="estimate-form-section">
+        <div class="container">
+
+            <h1>Get a Free Estimate</h1>
+            <h2>We take the stress out of moving!</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Fill out the form below for a free, no-obligation estimate.</p>
 
         <form id="moving-estimate-form" method="POST" data-netlify="true" name="estimate" netlify-honeypot="bot-field" autocomplete="on">
             <input type="hidden" name="form-name" value="estimate">
-            <p class="hidden">
-                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            <p class="hidden"> <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
 
-            <section class="mb-8 border-b border-grey-2 pb-6">
-                <h3 class="text-xl font-semibold text-dark-grey mb-4">1. Contact Information</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <label for="full_name" class="block text-sm font-medium text-gray-700">Full Name<span class="required">*</span></label>
-                        <input type="text" id="full_name" name="full_name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+            <section class="form-section">
+                <h3>1. Contact Information</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="full_name">Full Name<span class="required">*</span></label>
+                        <input type="text" id="full_name" name="full_name" required>
                     </div>
-                    <div>
-                        <label for="phone_number" class="block text-sm font-medium text-gray-700">Phone Number<span class="required">*</span></label>
-                        <input type="tel" id="phone_number" name="phone_number" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number<span class="required">*</span></label>
+                        <input type="tel" id="phone_number" name="phone_number" required>
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address<span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                    <div class="form-group">
+                        <label for="email">Email Address<span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
                     </div>
                 </div>
             </section>
 
-            <section class="mb-8 border-b border-grey-2 pb-6">
-                <h3 class="text-xl font-semibold text-dark-grey mb-4">2. Moving Details</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-                    <div>
-                        <label for="move_date" class="block text-sm font-medium text-gray-700">Move Date<span class="required">*</span></label>
-                        <input type="date" id="move_date" name="move_date" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+            <section class="form-section">
+                <h3>2. Moving Details</h3>
+                <div class="form-grid" style="grid-template-columns: 1fr 1fr;"> <div class="form-group">
+                        <label for="move_date">Move Date<span class="required">*</span></label>
+                        <input type="date" id="move_date" name="move_date" required>
                     </div>
-                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Preferred Time<span class="required">*</span> <span class="text-xs text-gray-500">(Select one or both)</span></label>
-                        <div class="mt-2 space-x-4">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" name="move_time[]" value="Morning" class="rounded border-gray-300 text-orange-1 shadow-sm focus:border-orange-2 focus:ring focus:ring-offset-0 focus:ring-orange-2 focus:ring-opacity-50">
-                                <span class="ml-2 text-sm text-gray-600">Morning</span>
-                            </label>
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" name="move_time[]" value="Afternoon" class="rounded border-gray-300 text-orange-1 shadow-sm focus:border-orange-2 focus:ring focus:ring-offset-0 focus:ring-orange-2 focus:ring-opacity-50">
-                                <span class="ml-2 text-sm text-gray-600">Afternoon</span>
-                            </label>
-                        </div>
+                     <div class="form-group checkbox-group">
+                        <label style="margin-bottom: 0.5rem;">Preferred Time<span class="required">*</span> <span style="font-size: 0.8rem; color: #888; margin-left: 5px;">(Select one or both)</span></label>
+                        <label>
+                            <input type="checkbox" name="move_time[]" value="Morning"> Morning
+                        </label>
+                        <label>
+                            <input type="checkbox" name="move_time[]" value="Afternoon"> Afternoon
+                        </label>
                     </div>
 
-                    <fieldset class="md:col-span-2 border border-grey-1 p-4 rounded-md mt-4">
-                        <legend class="text-base font-medium text-gray-900 px-2">Current Address<span class="required">*</span></legend>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
-                             <div class="md:col-span-3">
-                                 <label for="current_address" class="block text-sm font-medium text-gray-700 sr-only">Current Street Address</label>
-                                 <input type="text" id="current_address" name="current_address" required placeholder="Street Address" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                    <fieldset style="grid-column: 1 / -1;"> <legend>Current Address<span class="required">*</span></legend>
+                        <div class="address-grid">
+                             <div class="form-group street-address">
+                                 <label for="current_address" class="hidden">Current Street Address</label>
+                                 <input type="text" id="current_address" name="current_address" required placeholder="Street Address">
                              </div>
-                             <div>
-                                 <label for="current_city" class="block text-sm font-medium text-gray-700 sr-only">Current City</label>
-                                 <input type="text" id="current_city" name="current_city" placeholder="City" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             <div class="form-group">
+                                 <label for="current_city" class="hidden">Current City</label>
+                                 <input type="text" id="current_city" name="current_city" placeholder="City">
                              </div>
-                             <div>
-                                 <label for="current_postal_code" class="block text-sm font-medium text-gray-700 sr-only">Current Postal Code</label>
-                                 <input type="text" id="current_postal_code" name="current_postal_code" placeholder="Postal Code" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             <div class="form-group">
+                                 <label for="current_postal_code" class="hidden">Current Postal Code</label>
+                                 <input type="text" id="current_postal_code" name="current_postal_code" placeholder="Postal Code">
                              </div>
                         </div>
                     </fieldset>
 
-                     <fieldset class="md:col-span-2 border border-grey-1 p-4 rounded-md mt-4">
-                        <legend class="text-base font-medium text-gray-900 px-2">New Address<span class="required">*</span></legend>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
-                             <div class="md:col-span-3">
-                                 <label for="new_address" class="block text-sm font-medium text-gray-700 sr-only">New Street Address</label>
-                                 <input type="text" id="new_address" name="new_address" required placeholder="Street Address" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                     <fieldset style="grid-column: 1 / -1;"> <legend>New Address<span class="required">*</span></legend>
+                        <div class="address-grid">
+                             <div class="form-group street-address">
+                                 <label for="new_address" class="hidden">New Street Address</label>
+                                 <input type="text" id="new_address" name="new_address" required placeholder="Street Address">
                              </div>
-                             <div>
-                                 <label for="new_city" class="block text-sm font-medium text-gray-700 sr-only">New City</label>
-                                 <input type="text" id="new_city" name="new_city" placeholder="City" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             <div class="form-group">
+                                 <label for="new_city" class="hidden">New City</label>
+                                 <input type="text" id="new_city" name="new_city" placeholder="City">
                              </div>
-                             <div>
-                                 <label for="new_postal_code" class="block text-sm font-medium text-gray-700 sr-only">New Postal Code</label>
-                                 <input type="text" id="new_postal_code" name="new_postal_code" placeholder="Postal Code" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
+                             <div class="form-group">
+                                 <label for="new_postal_code" class="hidden">New Postal Code</label>
+                                 <input type="text" id="new_postal_code" name="new_postal_code" placeholder="Postal Code">
                              </div>
                         </div>
                     </fieldset>
                 </div>
             </section>
 
-            <section class="mb-8 border-b border-grey-2 pb-6">
-                <h3 class="text-xl font-semibold text-dark-grey mb-4">3. Move Type<span class="required">*</span></h3>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <input id="move_type_house" name="move_type" type="radio" value="House" required class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
-                        <label for="move_type_house" class="ml-3 block text-sm font-medium text-gray-700">House</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="move_type_apartment" name="move_type" type="radio" value="Apartment/Condo" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
-                        <label for="move_type_apartment" class="ml-3 block text-sm font-medium text-gray-700">Apartment/Condo</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="move_type_office" name="move_type" type="radio" value="Office/Commercial" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
-                        <label for="move_type_office" class="ml-3 block text-sm font-medium text-gray-700">Office/Commercial</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="move_type_storage" name="move_type" type="radio" value="Storage Move" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
-                        <label for="move_type_storage" class="ml-3 block text-sm font-medium text-gray-700">Storage Move</label>
-                    </div>
-                    <div class="flex items-center">
-                        <input id="move_type_other" name="move_type" type="radio" value="Other" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300">
-                        <label for="move_type_other" class="ml-3 block text-sm font-medium text-gray-700">Other</label>
-                        <input type="text" name="move_type_other_specify" placeholder="Please specify" class="ml-4 flex-1 rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 text-sm p-1">
-                    </div>
+            <section class="form-section">
+                <h3>3. Move Type<span class="required">*</span></h3>
+                <div class="form-group radio-group">
+                    <label>
+                        <input id="move_type_house" name="move_type" type="radio" value="House" required> House
+                    </label>
+                    <label>
+                        <input id="move_type_apartment" name="move_type" type="radio" value="Apartment/Condo"> Apartment/Condo
+                    </label>
+                    <label>
+                        <input id="move_type_office" name="move_type" type="radio" value="Office/Commercial"> Office/Commercial
+                    </label>
+                    <label>
+                        <input id="move_type_storage" name="move_type" type="radio" value="Storage Move"> Storage Move
+                    </label>
+                     <label style="display: flex; align-items: center;"> <input id="move_type_other" name="move_type" type="radio" value="Other"> Other
+                        <input type="text" name="move_type_other_specify" placeholder="Please specify" style="margin-left: 1rem; flex: 1; padding: 0.5rem;"> </label>
                 </div>
             </section>
 
-            <section class="mb-8 border-b border-grey-2 pb-6">
-                <h3 class="text-xl font-semibold text-dark-grey mb-4">4. Home Details</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <fieldset class="border border-grey-1 p-4 rounded-md">
-                        <legend class="text-base font-medium text-gray-900 px-2">Current Home</legend>
-                        <div class="space-y-4 mt-2">
-                            <div>
-                                <label for="current_bedrooms" class="block text-sm font-medium text-gray-700">Number of Bedrooms</label>
-                                <select id="current_bedrooms" name="current_bedrooms" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
-                                    <option>Studio</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4+</option>
-                                </select>
+            <section class="form-section">
+                <h3>4. Home Details</h3>
+                <div class="form-grid"> <fieldset>
+                        <legend>Current Home</legend>
+                        <div class="form-group">
+                            <label for="current_bedrooms">Number of Bedrooms</label>
+                            <select id="current_bedrooms" name="current_bedrooms">
+                                <option>Studio</option>
+                                <option>1</option>
+                                <option selected>2</option> <option>3</option>
+                                <option>4+</option>
+                            </select>
+                        </div>
+                        <div class="form-group radio-group">
+                            <label>Elevator Available?<span class="required">*</span></label>
+                            <div style="display: flex; gap: 1rem;"> <label><input type="radio" name="current_elevator" value="Yes" required> Yes</label>
+                                <label><input type="radio" name="current_elevator" value="No" required> No</label>
                             </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Elevator Available?<span class="required">*</span></label>
-                                <div class="mt-1 flex gap-x-4">
-                                    <label><input type="radio" name="current_elevator" value="Yes" required class="mr-1"> Yes</label>
-                                    <label><input type="radio" name="current_elevator" value="No" required class="mr-1"> No</label>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Stairs?</label>
-                                <div class="mt-1 flex gap-x-4 items-center">
-                                    <label><input type="radio" name="current_stairs" value="Yes" class="mr-1" onclick="toggleFlightsInput('current', true)"> Yes</label>
-                                    <label><input type="radio" name="current_stairs" value="No" checked class="mr-1" onclick="toggleFlightsInput('current', false)"> No</label>
-                                    <div id="current_flights_container" class="hidden-conditional ml-2 flex-1">
-                                        <label for="current_flights" class="sr-only">How many flights?</label>
-                                        <input type="number" id="current_flights" name="current_flights" placeholder="How many flights?" min="0" class="w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 text-sm p-1">
-                                    </div>
+                        </div>
+                        <div class="form-group radio-group">
+                            <label>Stairs?</label>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <label><input type="radio" name="current_stairs" value="Yes" onclick="toggleFlightsInput('current', true)"> Yes</label>
+                                <label><input type="radio" name="current_stairs" value="No" checked onclick="toggleFlightsInput('current', false)"> No</label>
+                                <div id="current_flights_container" class="hidden-conditional form-group" style="flex: 1; margin-bottom: 0;"> <label for="current_flights" class="hidden">How many flights?</label>
+                                    <input type="number" id="current_flights" name="current_flights" placeholder="How many flights?" min="0">
                                 </div>
                             </div>
                         </div>
                     </fieldset>
 
-                    <fieldset class="border border-grey-1 p-4 rounded-md">
-                        <legend class="text-base font-medium text-gray-900 px-2">New Home</legend>
-                        <div class="space-y-4 mt-2">
-                            <div>
-                                <label for="new_bedrooms" class="block text-sm font-medium text-gray-700">Number of Bedrooms</label>
-                                <select id="new_bedrooms" name="new_bedrooms" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50">
-                                    <option>Studio</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4+</option>
-                                </select>
+                    <fieldset>
+                        <legend>New Home</legend>
+                         <div class="form-group">
+                            <label for="new_bedrooms">Number of Bedrooms</label>
+                            <select id="new_bedrooms" name="new_bedrooms">
+                                <option>Studio</option>
+                                <option>1</option>
+                                <option selected>2</option> <option>3</option>
+                                <option>4+</option>
+                            </select>
+                        </div>
+                        <div class="form-group radio-group">
+                            <label>Elevator Available?<span class="required">*</span></label>
+                            <div style="display: flex; gap: 1rem;">
+                                <label><input type="radio" name="new_elevator" value="Yes" required> Yes</label>
+                                <label><input type="radio" name="new_elevator" value="No" required> No</label>
                             </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Elevator Available?<span class="required">*</span></label>
-                                <div class="mt-1 flex gap-x-4">
-                                    <label><input type="radio" name="new_elevator" value="Yes" required class="mr-1"> Yes</label>
-                                    <label><input type="radio" name="new_elevator" value="No" required class="mr-1"> No</label>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Stairs?</label>
-                                <div class="mt-1 flex gap-x-4 items-center">
-                                    <label><input type="radio" name="new_stairs" value="Yes" class="mr-1" onclick="toggleFlightsInput('new', true)"> Yes</label>
-                                    <label><input type="radio" name="new_stairs" value="No" checked class="mr-1" onclick="toggleFlightsInput('new', false)"> No</label>
-                                     <div id="new_flights_container" class="hidden-conditional ml-2 flex-1">
-                                        <label for="new_flights" class="sr-only">How many flights?</label>
-                                        <input type="number" id="new_flights" name="new_flights" placeholder="How many flights?" min="0" class="w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 text-sm p-1">
-                                    </div>
+                        </div>
+                        <div class="form-group radio-group">
+                            <label>Stairs?</label>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <label><input type="radio" name="new_stairs" value="Yes" onclick="toggleFlightsInput('new', true)"> Yes</label>
+                                <label><input type="radio" name="new_stairs" value="No" checked onclick="toggleFlightsInput('new', false)"> No</label>
+                                <div id="new_flights_container" class="hidden-conditional form-group" style="flex: 1; margin-bottom: 0;">
+                                    <label for="new_flights" class="hidden">How many flights?</label>
+                                    <input type="number" id="new_flights" name="new_flights" placeholder="How many flights?" min="0">
                                 </div>
                             </div>
                         </div>
@@ -315,227 +392,223 @@
                 </div>
             </section>
 
-            <section class="mb-8 border-b border-grey-2 pb-6">
-                <h3 class="text-xl font-semibold text-dark-grey mb-4">5. Moving Services Needed <span class="text-sm font-normal text-gray-500">(Check all that apply)</span></h3>
-                <div class="space-y-2">
-                    <div class="flex items-start">
-                        <input id="service_disassembly" name="services_needed[]" type="checkbox" value="Furniture Disassembly & Reassembly" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
-                        <label for="service_disassembly" class="ml-3 block text-sm font-medium text-gray-700">Furniture Disassembly & Reassembly</label>
-                    </div>
-                    <div class="flex items-start">
-                        <input id="service_specialty" name="services_needed[]" type="checkbox" value="Specialty Items" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
-                        <label for="service_specialty" class="ml-3 block text-sm font-medium text-gray-700">Specialty Items (Piano, Safe, Pool Table, Treadmill, Peloton, etc.)</label>
-                    </div>
-                    <div class="flex items-start">
-                        <input id="service_heavy" name="services_needed[]" type="checkbox" value="Items over 300lbs" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
-                        <label for="service_heavy" class="ml-3 block text-sm font-medium text-gray-700">Items over 300lbs</label>
-                    </div>
-                     <div class="flex items-start">
-                        <input id="service_junk" name="services_needed[]" type="checkbox" value="Junk Removal" class="focus:ring-orange-2 h-4 w-4 text-orange-1 border-gray-300 rounded mt-1">
-                        <label for="service_junk" class="ml-3 block text-sm font-medium text-gray-700">Junk Removal</label>
-                    </div>
+            <section class="form-section">
+                <h3>5. Moving Services Needed <span style="font-size: 0.9rem; font-weight: normal; color: #666;">(Check all that apply)</span></h3>
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input id="service_disassembly" name="services_needed[]" type="checkbox" value="Furniture Disassembly & Reassembly"> Furniture Disassembly & Reassembly
+                    </label>
+                    <label>
+                        <input id="service_specialty" name="services_needed[]" type="checkbox" value="Specialty Items"> Specialty Items (Piano, Safe, Pool Table, Treadmill, Peloton, etc.)
+                    </label>
+                    <label>
+                        <input id="service_heavy" name="services_needed[]" type="checkbox" value="Items over 300lbs"> Items over 300lbs
+                    </label>
+                     <label>
+                        <input id="service_junk" name="services_needed[]" type="checkbox" value="Junk Removal"> Junk Removal
+                    </label>
                 </div>
             </section>
 
-             <section class="mb-8 border-b border-grey-2 pb-6">
-                <h3 class="text-xl font-semibold text-dark-grey mb-4">6. Inventory <span class="text-sm font-normal text-gray-500">(Enter quantity for each item)</span></h3>
+             <section class="form-section">
+                <h3>6. Inventory <span style="font-size: 0.9rem; font-weight: normal; color: #666;">(Enter quantity for each item)</span></h3>
                 <div class="inventory-grid">
                     <div class="inventory-item">
                         <label for="inv_table_chair">Table/Chair</label>
-                        <input type="number" id="inv_table_chair" name="inventory[table_chair]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_table_chair" name="inventory[table_chair]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_bar_stools">Bar / Bar stools</label>
-                        <input type="number" id="inv_bar_stools" name="inventory[bar_stools]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_bar_stools" name="inventory[bar_stools]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_large_appliances">Large Appliances</label>
-                        <input type="number" id="inv_large_appliances" name="inventory[large_appliances]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_large_appliances" name="inventory[large_appliances]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_cabinets">Cabinets</label>
-                        <input type="number" id="inv_cabinets" name="inventory[cabinets]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_cabinets" name="inventory[cabinets]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_washer_dryer">Washer/Dryer</label>
-                        <input type="number" id="inv_washer_dryer" name="inventory[washer_dryer]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_washer_dryer" name="inventory[washer_dryer]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_sectional_couch">Sectional Couch</label>
-                        <input type="number" id="inv_sectional_couch" name="inventory[sectional_couch]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_sectional_couch" name="inventory[sectional_couch]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_couch">Couch</label>
-                        <input type="number" id="inv_couch" name="inventory[couch]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_couch" name="inventory[couch]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_love_seat">Love Seat</label>
-                        <input type="number" id="inv_love_seat" name="inventory[love_seat]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_love_seat" name="inventory[love_seat]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_living_room_chairs">Living room Chairs</label>
-                        <input type="number" id="inv_living_room_chairs" name="inventory[living_room_chairs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_living_room_chairs" name="inventory[living_room_chairs]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_coffee_tables">Coffee Tables</label>
-                        <input type="number" id="inv_coffee_tables" name="inventory[coffee_tables]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_coffee_tables" name="inventory[coffee_tables]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_end_tables">End Tables</label>
-                        <input type="number" id="inv_end_tables" name="inventory[end_tables]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_end_tables" name="inventory[end_tables]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_lamps">Lamps</label>
-                        <input type="number" id="inv_lamps" name="inventory[lamps]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_lamps" name="inventory[lamps]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_rugs">Rugs</label>
-                        <input type="number" id="inv_rugs" name="inventory[rugs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_rugs" name="inventory[rugs]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_fireplace">Fireplace</label>
-                        <input type="number" id="inv_fireplace" name="inventory[fireplace]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_fireplace" name="inventory[fireplace]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_tvs">TV's</label>
-                        <input type="number" id="inv_tvs" name="inventory[tvs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_tvs" name="inventory[tvs]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_cribs">Cribs</label>
-                        <input type="number" id="inv_cribs" name="inventory[cribs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_cribs" name="inventory[cribs]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_mattress_king">Mattress (King)</label>
-                        <input type="number" id="inv_mattress_king" name="inventory[mattress_king]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_mattress_king" name="inventory[mattress_king]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_mattress_queen">Mattress (Queen)</label>
-                        <input type="number" id="inv_mattress_queen" name="inventory[mattress_queen]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_mattress_queen" name="inventory[mattress_queen]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_mattress_full">Mattress (Full)</label>
-                        <input type="number" id="inv_mattress_full" name="inventory[mattress_full]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_mattress_full" name="inventory[mattress_full]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_night_stands">Night Stands</label>
-                        <input type="number" id="inv_night_stands" name="inventory[night_stands]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_night_stands" name="inventory[night_stands]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_dressers">Dressers</label>
-                        <input type="number" id="inv_dressers" name="inventory[dressers]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_dressers" name="inventory[dressers]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_hi_boys">Hi Boys</label>
-                        <input type="number" id="inv_hi_boys" name="inventory[hi_boys]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_hi_boys" name="inventory[hi_boys]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_chests">Chests</label>
-                        <input type="number" id="inv_chests" name="inventory[chests]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_chests" name="inventory[chests]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_stools">Stools</label>
-                        <input type="number" id="inv_stools" name="inventory[stools]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_stools" name="inventory[stools]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_mirrors">Mirrors</label>
-                        <input type="number" id="inv_mirrors" name="inventory[mirrors]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_mirrors" name="inventory[mirrors]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_book_shelfs">Book Shelfs</label>
-                        <input type="number" id="inv_book_shelfs" name="inventory[book_shelfs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_book_shelfs" name="inventory[book_shelfs]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_file_cabinets">File Cabinets</label>
-                        <input type="number" id="inv_file_cabinets" name="inventory[file_cabinets]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_file_cabinets" name="inventory[file_cabinets]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_desk">Desk</label>
-                        <input type="number" id="inv_desk" name="inventory[desk]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_desk" name="inventory[desk]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_office_chair">Office Chair</label>
-                        <input type="number" id="inv_office_chair" name="inventory[office_chair]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_office_chair" name="inventory[office_chair]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_piano">Piano</label>
-                        <input type="number" id="inv_piano" name="inventory[piano]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_piano" name="inventory[piano]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_treadmill">Treadmill</label>
-                        <input type="number" id="inv_treadmill" name="inventory[treadmill]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_treadmill" name="inventory[treadmill]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_workout_equipment">Workout Equipment</label>
-                        <input type="number" id="inv_workout_equipment" name="inventory[workout_equipment]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_workout_equipment" name="inventory[workout_equipment]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_tv_stands">TV Stands</label>
-                        <input type="number" id="inv_tv_stands" name="inventory[tv_stands]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_tv_stands" name="inventory[tv_stands]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_bed_frame">Bed frame</label>
-                        <input type="number" id="inv_bed_frame" name="inventory[bed_frame]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_bed_frame" name="inventory[bed_frame]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_wall_art">Wall Art Small/Large</label>
-                        <input type="number" id="inv_wall_art" name="inventory[wall_art]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_wall_art" name="inventory[wall_art]" min="0" value="0">
                     </div>
-                    <div class="inventory-item">
+                     <div class="inventory-item">
                         <label for="inv_mirrors_2">Mirrors (General)</label>
-                        <input type="number" id="inv_mirrors_2" name="inventory[mirrors_general]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_mirrors_2" name="inventory[mirrors_general]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_grill">Grill</label>
-                        <input type="number" id="inv_grill" name="inventory[grill]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_grill" name="inventory[grill]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_outside_furniture">Outside Furniture</label>
-                        <input type="number" id="inv_outside_furniture" name="inventory[outside_furniture]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_outside_furniture" name="inventory[outside_furniture]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_tools">Tools</label>
-                        <input type="number" id="inv_tools" name="inventory[tools]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_tools" name="inventory[tools]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_tires">Tires</label>
-                        <input type="number" id="inv_tires" name="inventory[tires]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_tires" name="inventory[tires]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_sport_gear">Sport Gear</label>
-                        <input type="number" id="inv_sport_gear" name="inventory[sport_gear]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_sport_gear" name="inventory[sport_gear]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_pool_tables">Pool Tables</label>
-                        <input type="number" id="inv_pool_tables" name="inventory[pool_tables]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_pool_tables" name="inventory[pool_tables]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_atvs">ATVs</label>
-                        <input type="number" id="inv_atvs" name="inventory[atvs]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_atvs" name="inventory[atvs]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_lawnmower">Lawnmower</label>
-                        <input type="number" id="inv_lawnmower" name="inventory[lawnmower]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_lawnmower" name="inventory[lawnmower]" min="0" value="0">
                     </div>
-                     <div class="inventory-item">
+                      <div class="inventory-item">
                         <label for="inv_bicycles">Bicycles (Adult/Children)</label>
-                        <input type="number" id="inv_bicycles" name="inventory[bicycles]" min="0" value="0" class="rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
+                        <input type="number" id="inv_bicycles" name="inventory[bicycles]" min="0" value="0">
                     </div>
-                </div>
-                <div class="mt-6">
-                    <label for="num_boxes" class="block text-sm font-medium text-gray-700">Please Indicate the Number of boxes<span class="required">*</span></label>
-                    <input type="number" id="num_boxes" name="num_boxes" required min="0" value="0" class="mt-1 block w-full max-w-xs rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50 p-1">
-                </div>
+                     </div>
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label for="num_boxes">Please Indicate the Number of boxes<span class="required">*</span></label>
+                    <input type="number" id="num_boxes" name="num_boxes" required min="0" value="0" style="max-width: 150px;"> </div>
             </section>
 
-            <section class="mb-8">
-                 <h3 class="text-xl font-semibold text-dark-grey mb-4">7. Additional Information</h3>
-                 <label for="additional_info" class="block text-sm font-medium text-gray-700">Any other requests, concerns, or details about your move?</label>
-                 <textarea id="additional_info" name="additional_info" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-2 focus:ring focus:ring-orange-2 focus:ring-opacity-50"></textarea>
+            <section class="form-section">
+                 <h3>7. Additional Information</h3>
+                 <div class="form-group">
+                    <label for="additional_info" class="hidden">Any other requests, concerns, or details about your move?</label>
+                    <textarea id="additional_info" name="additional_info" rows="4" placeholder="Enter any other requests, concerns, or details about your move here..."></textarea>
+                 </div>
             </section>
 
-            <div class="mt-8 text-center">
-                <button type="submit" class="inline-flex justify-center py-3 px-6 border border-transparent shadow-md text-lg font-medium rounded-md text-white bg-orange-1 hover:bg-orange-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-2 transition duration-150 ease-in-out">
-                    Get My Free Estimate
+            <div class="submit-button-container">
+                <button type="submit" class="cta-button" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;"> Get My Free Estimate
                 </button>
             </div>
 
@@ -545,13 +618,13 @@
                     <li><strong>Non-Binding Estimate:</strong> The estimate provided is based on the information given at the time of inquiry. This estimate is not a guaranteed price and is subject to change based on factors such as additional items, time required, unforeseen circumstances, or changes to the moving conditions.</li>
                     <li><strong>Accuracy of Inventory & Details:</strong> The customer is responsible for providing an accurate description of the inventory, access conditions (stairs, elevators, long carry distances, etc.), and any special handling requirements. Any discrepancies may result in additional charges.</li>
                     <li><strong>Hourly & Flat Rate Pricing:</strong>
-                        <ul class="list-disc ml-5 mt-1">
+                        <ul>
                             <li>Hourly rates apply from the time our crew arrives at the pickup location until the completion of the move, including loading, unloading, and any required travel time.</li>
                             <li>Flat-rate pricing, if applicable, is based on the agreed-upon scope of work and does not cover additional services requested on the moving day.</li>
                         </ul>
                     </li>
                     <li><strong>Additional Charges:</strong> The following may result in extra charges:
-                        <ul class="list-disc ml-5 mt-1">
+                        <ul>
                             <li>Additional items or services not included in the original estimate</li>
                             <li>Disassembly/reassembly of furniture</li>
                             <li>Packing/unpacking services</li>
@@ -561,7 +634,7 @@
                         </ul>
                     </li>
                     <li><strong>Cancellation & Rescheduling Policy:</strong>
-                         <ul class="list-disc ml-5 mt-1">
+                         <ul>
                             <li>Cancellations made less than 48 hours before the scheduled move may be subject to a cancellation fee.</li>
                             <li>Rescheduling is subject to availability and may affect the final cost.</li>
                         </ul>
@@ -571,6 +644,48 @@
 
         </form>
         </div>
+    </section>
+
+    <footer> <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>A GOOD GUY MOVING LTD.</h3>
+                    <p class="tagline">We take the stress out of moving</p>
+                     <img src="logos/White logo - no background.svg" alt="A Good Guy Moving Ltd. Logo" class="footer-logo">
+                </div>
+                <div class="footer-column">
+                    <h3>OFFICE HOURS</h3>
+                    <p>Monday to Friday<br>9:00 am to 5:00 pm</p>
+                    <p>Saturdays<br>Noon to 4:00 p.m.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>CONTACT US</h3>
+                    <p>Jeffrey Robson - Estimates<br>
+                    Phone: (403) 437-9441<br>
+                    Email: jeffreyrobson@agoodguymoving.com</p>
+                </div>
+                 <div class="footer-column">
+                    <h3>GET SOCIAL</h3>
+                   
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/agoodguymoving/" class="social-icon" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/agoodguymovingltd/" class="social-icon" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 A Good Guy Moving Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Function to show/hide the 'number of flights' input based on radio button selection
@@ -578,49 +693,72 @@
             const container = document.getElementById(`${locationPrefix}_flights_container`);
             const input = document.getElementById(`${locationPrefix}_flights`);
             if (show) {
-                container.style.display = 'block'; // Or 'flex', 'inline-block' depending on layout needs
-                input.required = true; // Make it required only when visible
+                container.style.display = 'block'; // Or 'flex', 'inline-block'
+                // input.required = true; // Make it required only when visible - might be too strict for estimates
             } else {
                 container.style.display = 'none';
-                input.required = false; // Not required when hidden
+                // input.required = false; // Not required when hidden
                 input.value = ''; // Clear the value if hidden
             }
         }
 
-        // Initialize the state on page load in case a 'Yes' radio is pre-selected (though default is 'No')
+        // Initialize the state on page load
         document.addEventListener('DOMContentLoaded', () => {
             toggleFlightsInput('current', document.querySelector('input[name="current_stairs"][value="Yes"]:checked') !== null);
             toggleFlightsInput('new', document.querySelector('input[name="new_stairs"][value="Yes"]:checked') !== null);
-        });
 
-        // Optional: Add validation for time selection (at least one checkbox checked)
-        const form = document.getElementById('moving-estimate-form');
-        const timeCheckboxes = form.querySelectorAll('input[name="move_time[]"]');
+            // Add validation for time selection
+            const form = document.getElementById('moving-estimate-form');
+            const timeCheckboxes = form.querySelectorAll('input[name="move_time[]"]');
 
-        form.addEventListener('submit', function(event) {
-            let timeChecked = false;
-            timeCheckboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    timeChecked = true;
+            form.addEventListener('submit', function(event) {
+                let timeChecked = false;
+                timeCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        timeChecked = true;
+                    }
+                });
+
+                if (!timeChecked) {
+                    const timeGroupLabel = document.querySelector('label[for="move_time[]"]'); // Adjust selector if needed
+                    alert('Please select at least one preferred move time (Morning or Afternoon).');
+                    const firstTimeCheckboxLabel = timeCheckboxes[0].closest('label');
+                     if (firstTimeCheckboxLabel) {
+                          firstTimeCheckboxLabel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                     }
+                    event.preventDefault(); // Prevent form submission
+                    return false;
                 }
+                 // --- Basic Check for Required Fields ---
+                 let allRequiredFilled = true;
+                 const requiredFields = form.querySelectorAll('[required]');
+                 requiredFields.forEach(field => {
+                    if (!field.value.trim() && field.type !== 'radio' && field.type !== 'checkbox') {
+                        allRequiredFilled = false;
+                        field.style.borderColor = 'red'; // Highlight missing field
+                    } else if (field.type === 'radio') {
+                        const radioGroupName = field.name;
+                        if (!form.querySelector(`input[name="${radioGroupName}"]:checked`)) {
+                           allRequiredFilled = false;
+                           // Find the fieldset or group to highlight
+                           const groupElement = field.closest('fieldset') || field.closest('.form-group');
+                           if(groupElement) groupElement.style.border = '1px solid red';
+                        }
+                    }
+                    // Add checkbox group validation if needed
+                 });
+
+                 if (!allRequiredFilled) {
+                     alert('Please fill out all required fields marked with *.');
+                     event.preventDefault();
+                     return false;
+                 }
+
+                 // Reset styles if validation passes before submitting
+                 requiredFields.forEach(field => { field.style.borderColor = ''; });
+                 const fieldsets = form.querySelectorAll('fieldset');
+                 fieldsets.forEach(fs => { fs.style.border = ''; });
             });
-
-            if (!timeChecked) {
-                // Find the first time checkbox to focus on or display message near
-                const firstTimeCheckboxLabel = timeCheckboxes[0].closest('label');
-                alert('Please select at least one preferred move time (Morning or Afternoon).'); // Consider using a more user-friendly notification instead of alert()
-                if (firstTimeCheckboxLabel) {
-                     firstTimeCheckboxLabel.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                     // Optionally highlight the section
-                     const timeSection = firstTimeCheckboxLabel.closest('div');
-                     timeSection.style.outline = '2px solid red';
-                     setTimeout(() => { timeSection.style.outline = 'none'; }, 3000);
-                }
-                event.preventDefault(); // Prevent form submission
-                return false;
-            }
-
-            // Add other custom validations if needed
         });
 
     </script>

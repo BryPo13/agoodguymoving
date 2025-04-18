@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Randomly select one of the 4 logo images
+    const logoImages = [
+        'logos/Black logo - no background.svg',
+        'logos/Color logo - no background.svg',
+        'logos/Color logo with background.svg',
+        'logos/White logo - no background.svg'
+    ];
+    
+    // Get a random logo from the array
+    const randomLogo = logoImages[Math.floor(Math.random() * logoImages.length)];
+    
+    // Update all logo images on the page
+    document.querySelectorAll('.logo img').forEach(logoImg => {
+        // Skip the footer logo which should remain white
+        if (!logoImg.classList.contains('footer-logo')) {
+            logoImg.src = randomLogo;
+        }
+    });
+    
     // Mobile navigation functionality is handled via CSS
     
     // Smooth scrolling for anchor links

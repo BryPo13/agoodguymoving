@@ -1,13 +1,13 @@
+# netlify.toml
+
 [build]
-  command = "npm run build"
-  publish = ".next"  # For Next.js 12+ (or "out" if you customized the output)
-  functions = "functions"  # If using Netlify Functions
+  # No build command needed for static HTML site
+  publish = "."  # Publish the root directory
 
 [build.environment]
-  NODE_VERSION = "18"  # Must match your package.json "engines"
-  NEXT_TELEMETRY_DISABLED = "1"  # Disables Next.js telemetry
+  NODE_VERSION = "18"  # Specify Node.js version if needed by build or functions
 
-# Next.js requires these headers for proper functioning
+# Headers for security
 [[headers]]
   for = "/*"
   [headers.values]
@@ -15,23 +15,12 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;"
+    # Content-Security-Policy: Allows self, Google Fonts, data URIs, Netlify API.
+    # Enforces external scripts and styles (no 'unsafe-inline').
+    # This is more secure but requires all JS/CSS to be in external files
+    # or <style> blocks in <head>. Inline styles/scripts will be blocked.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;"
 
-# Required for client-side routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Language = ["en"], Country = ["US"]}
-
-# For 404 handling
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[dev]
-  framework = "nextjs"
-  targetPort = 3000
-  autoLaunch = true
+# [[redirects]] section removed - Netlify handles 404s automatically
+# if a 404.html file exists in the publish directory.
+# Ensure you have a 404.html file in your root directory ('.').
