@@ -236,20 +236,22 @@ li {
 }
 
 /* Navigation */
-.main-nav ul {
+.main-nav .nav-list { /* Use .nav-list consistently */
     display: flex;
     list-style: none;
     flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
     justify-content: flex-end;
     align-items: center;
+    padding-left: 0; /* Remove default padding */
+    margin-bottom: 0; /* Override default margin */
 }
 
-.main-nav li {
+.main-nav .nav-item { /* Use .nav-item consistently */
     margin-left: var(--space-sm); /* Use left margin for spacing */
     margin-bottom: 0; /* Override default li margin */
 }
 
-.main-nav a {
+.main-nav .nav-link { /* Use .nav-link consistently */
     color: var(--color-text-muted);
     font-weight: 600;
     padding: var(--space-sm) var(--space-md);
@@ -257,15 +259,16 @@ li {
     border-radius: var(--border-radius-sm);
     transition: var(--transition-base);
     font-size: var(--text-base-size);
+    text-decoration: none; /* Ensure no default underline */
 }
 
-.main-nav a:hover,
-.main-nav a.active {
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
     color: var(--color-primary);
     background-color: rgba(255, 107, 0, 0.05);
 }
 
-.main-nav a.active::after {
+.main-nav .nav-link.active::after {
     content: '';
     position: absolute;
     bottom: 2px; /* Closer to text */
@@ -276,6 +279,21 @@ li {
     background: var(--gradient-primary);
     border-radius: 1px;
 }
+
+/* Ensure CTA button within nav maintains consistent styling */
+.main-nav .nav-link.cta-button {
+    padding: var(--space-sm) var(--space-lg); /* Override nav-link padding */
+}
+.main-nav .nav-link.cta-button:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); /* Use button hover */
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 0, 0.4);
+}
+.main-nav .nav-link.cta-button::after {
+    content: none; /* Remove underline from CTA button */
+}
+
 
 /* 6. Footer
 -------------------------------------------------- */
@@ -306,7 +324,7 @@ li {
     margin-bottom: var(--space-lg);
 }
 
-.footer-column h3 {
+.footer-column .footer-title { /* Use .footer-title consistently */
     color: var(--color-primary-light);
     margin-bottom: var(--space-md);
     text-align: left;
@@ -315,7 +333,7 @@ li {
     font-size: var(--text-lg);
 }
 
-.footer-column h3::after {
+.footer-column .footer-title::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -427,6 +445,7 @@ li {
 .estimate-form-section { max-width: 900px; }
 .error-container { max-width: 800px; }
 .contact-content .container { max-width: 1000px; } /* For contact form layout */
+.testimonials-section .container { max-width: 900px; } /* Narrower for testimonials */
 
 .content-section { /* Generic wrapper inside page content */
     margin-bottom: var(--space-xl);
@@ -663,13 +682,13 @@ li {
     color: var(--color-text-muted);
     margin-top: var(--space-md);
 }
-.testimonials-content .testimonial-cta { /* CTA at the bottom of testimonials.html */
+.testimonials-section .testimonial-cta { /* CTA at the bottom of testimonials.html */
     text-align: center;
     margin-top: var(--space-xl);
     padding: var(--space-lg) 0;
     border-top: var(--border-width) solid var(--color-border);
 }
-.testimonials-content .testimonial-cta h3 {
+.testimonials-section .testimonial-cta h3 {
     margin-bottom: var(--space-md);
 }
 
@@ -678,7 +697,8 @@ li {
     margin-bottom: var(--space-xxl);
 }
 .about-content .team-section .team-card-container {
-     justify-content: center; /* Center the single team member */
+    display:flex;
+    justify-content: center; /* Center the single team member */
 }
 .about-content .team-card {
     max-width: 350px; /* Limit card width */
@@ -769,6 +789,7 @@ li {
     border-left: 5px solid var(--color-primary);
     border-radius: var(--border-radius-sm);
     padding: var(--space-lg);
+    margin-bottom: var(--space-lg); /* Add spacing between cards */
 }
 .contact-content .contact-info .contact-card h3,
 .contact-content .contact-info .contact-card h4 {
@@ -965,8 +986,9 @@ fieldset legend {
  /* Inventory Grid */
  .inventory-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust minmax */
-    gap: var(--space-md);
+    /* Changed from auto-fit to explicit 4 columns */
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg); /* Increased gap slightly */
  }
  .inventory-item label {
     display: block;
@@ -1059,6 +1081,9 @@ label.error {
     .contact-content .contact-columns {
         grid-template-columns: 1fr; /* Stack contact columns */
     }
+    .inventory-grid {
+        grid-template-columns: repeat(3, 1fr); /* Adjust inventory grid for tablets */
+    }
 }
 
 @media (max-width: 768px) {
@@ -1081,13 +1106,13 @@ label.error {
         order: 3; /* Move nav below logo/toggle */
         margin-top: var(--space-sm);
     }
-    .main-nav ul {
+    .main-nav .nav-list {
         justify-content: center; /* Center nav items */
         flex-wrap: wrap;
         padding-top: var(--space-sm);
         border-top: var(--border-width) solid var(--color-border); /* Separator line */
     }
-    .main-nav li {
+    .main-nav .nav-item {
         margin: var(--space-xs) var(--space-sm); /* Adjust spacing for wrapped items */
     }
     .header-section.scrolled .main-nav { /* Simplified scrolled nav for mobile */
@@ -1095,7 +1120,7 @@ label.error {
         width: auto;
         order: 0; /* Reset order */
     }
-    .header-section.scrolled .main-nav ul {
+    .header-section.scrolled .main-nav .nav-list {
         border-top: none;
         padding-top: 0;
         justify-content: flex-end;
@@ -1121,11 +1146,11 @@ label.error {
         grid-template-columns: 1fr; /* Stack columns */
         text-align: center;
     }
-     .footer-column h3 {
+     .footer-column .footer-title {
          text-align: center;
          display: block;
      }
-     .footer-column h3::after {
+     .footer-column .footer-title::after {
         left: 50%;
         transform: translateX(-50%);
      }
@@ -1134,13 +1159,17 @@ label.error {
          margin-right: auto;
          justify-content: center;
      }
+     .inventory-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust inventory grid for smaller tablets */
+        gap: var(--space-md); /* Reduce gap slightly */
+    }
 }
 
 @media (max-width: 576px) {
     /* Small mobile */
     html { font-size: 87.5%; } /* 14px base */
 
-    .main-nav a {
+    .main-nav .nav-link {
         padding: var(--space-sm); /* Slightly smaller padding */
         font-size: var(--text-sm);
     }
@@ -1152,5 +1181,12 @@ label.error {
 
     .card-container {
         grid-template-columns: 1fr; /* Stack cards */
+    }
+     .inventory-grid {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns for small mobile, adjust if needed */
+        gap: var(--space-sm); /* Further reduce gap */
+    }
+    .inventory-item input[type="number"] {
+         padding: var(--space-xs); /* Even smaller padding */
     }
 }
