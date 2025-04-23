@@ -607,6 +607,14 @@ li {
     margin-right: auto;
 }
 
+/* Style for the standalone package card (e.g., Coming Soon section) */
+.packages-section > .package-card { /* Corrected selector: direct child of packages-section */
+    max-width: 600px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--space-lg); /* Add some top margin */
+}
+
 /* Index/Testimonials Page - Testimonial Preview / Cards */
 .testimonials-section { /* Container for testimonials on testimonials.html */
      background-color: var(--color-white); /* Reset background */
