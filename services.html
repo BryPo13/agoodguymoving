@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;">
-    <meta name="description" content="Explore our comprehensive moving services including full pack & move, storage solutions, and specialty item moving. Get a free estimate for your next move.">
+    <meta name="description" content="Explore our comprehensive moving services in Calgary, Alberta, including full pack & move, storage solutions, and specialty item moving. Get a free estimate for your next move in Calgary.">
+    <meta name="keywords" content="moving services Calgary, packing service Calgary, storage solutions Calgary, junk removal Calgary, specialty item moving Calgary, commercial moving Calgary, loading and unloading Calgary, Calgary movers, Alberta movers">
+    <meta name="author" content="A Good Guy Moving Ltd.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Moving Services | A Good Guy Moving Ltd. - Calgary, Alberta">
+    <meta property="og:description" content="Explore our comprehensive moving services in Calgary, Alberta, including full pack & move, storage solutions, and specialty item moving. Get a free estimate for your next move in Calgary.">
+    <meta property="og:image" content="/logos/Color_logo_no_background.png">
+    <meta property="og:url" content="https://www.agoodguymoving.com/services.html">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Services | A Good Guy Moving Ltd.</title>
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="canonical" href="https://www.agoodguymoving.com/services.html">
+
+    <title>Moving Services | A Good Guy Moving Ltd. - Calgary, Alberta</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="logos/Color_logo_no_background.png" as="image">
 </head>
 <body>
-<header class="header-section">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header-section" role="banner">
         <div class="container header-container">
             <div class="site-logo logo">
-                <img src="logos/Color logo - no background.svg" alt="A Good Guy Moving Ltd. Logo" class="logo-image">
+                <a href="index.html">
+                    <img src="logos/Color logo - no background.svg" alt="A Good Guy Moving Ltd. Logo" class="logo-image" width="200" height="80">
+                </a>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" hidden>
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list" id="main-menu" role="menubar">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                     <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
@@ -29,155 +51,203 @@
         </div>
     </header>
 
-    <section class="page-header-section">
-        <div class="container page-header-container">
-            <h2 class="page-title">OUR SERVICES</h2>
-        </div>
-    </section>
-
-    <section class="packages-section">
-        <div class="container packages-container">
-            <h2 class="section-title">PACKAGED SERVICES</h2>
-            <div class="card-container package-card-container">
-                <div class="content-card package-card">
-                    <div class="card-icon package-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#ff6b00">
-                            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h12v16z"/>
-                            <path d="M8 6h8v2H8zm0 4h8v2H8zm0 4h8v2H8z"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">Move and Store</h3>
-                    <ul class="list-content package-list">
-                        <li class="list-item package-item">Overnight Storage</li>
-                        <li class="list-item package-item">Weekly Storage</li>
-                        <li class="list-item package-item">Monthly Storage</li>
-                        <li class="list-item package-item">Junk Removal</li>
-                    </ul>
-                    <p class="card-description">Need time between moving out and moving in? Our secure storage options paired with our moving service ensure your belongings are safe until you're ready for them.</p>
-                </div>
-                <div class="content-card package-card">
-                    <div class="card-icon package-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#ff6b00">
-                            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">Move Only</h3>
-                    <ul class="list-content package-list">
-                        <li class="list-item package-item">Rate Per Hour</li>
-                        <li class="list-item package-item">Flat Rate for Deliveries</li>
-                        <li class="list-item package-item">Long or Short Distance</li>
-                        <li class="list-item package-item">No Hidden Fees</li>
-                    </ul>
-                    <p class="card-description">Our basic service focuses on efficiently moving your packed belongings from one location to another, with transparent pricing and professional care.</p>
-                </div>
+    <main id="main-content" role="main">
+        <section class="page-header-section" aria-labelledby="page-title">
+            <div class="container page-header-container">
+                <h1 id="page-title" class="page-title">OUR SERVICES</h1>
             </div>
-            <div class="coming-soon">AVAILABLE SOON</div>
-        </div>
+        </section>
 
-        <div class="content-card package-card">
-            <div class="card-icon package-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#ff6b00">
-                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
-                    <path d="M8 13h8v2H8z"/>
-                </svg>
-            </div>
-            <h3 class="card-title">Full Pack & Move</h3>
-            <ul class="list-content package-list">
-                <li class="list-item package-item">Packing Service</li>
-                <li class="list-item package-item">Cleaning Service</li>
-                <li class="list-item package-item">Moving Service</li>
-                <li class="list-item package-item">Junk Removal</li>
-            </ul>
-            <p class="card-description">Our comprehensive service where we handle everything from packing your belongings to cleaning and moving. Perfect for those who want a completely stress-free experience.</p>
-        </div>
-    </section>
-
-    <section class="services-section additional-services">
-        <div class="container services-container">
-            <h2 class="section-title">ADDITIONAL SERVICES</h2>
-            <div class="list-container service-list-container">
-                <div class="list-item service-item">
-                    <h3 class="list-title">Furniture Assembly/Disassembly</h3>
-                    <p class="list-description">We can take apart and reassemble your furniture to ensure safe transport and proper setup in your new space.</p>
-                </div>
-                <div class="list-item service-item">
-                    <h3 class="list-title">Specialty Item Moving</h3>
-                    <p class="list-description">From pianos to pool tables, we have the expertise to move your valuable specialty items with care.</p>
-                </div>
-                <div class="list-item service-item">
-                    <h3 class="list-title">Commercial Moving</h3>
-                    <p class="list-description">We help businesses relocate with minimal downtime, carefully moving office equipment, furniture, and files.</p>
-                </div>
-                <div class="list-item service-item">
-                    <h3 class="list-title">Loading & Unloading</h3>
-                    <p class="list-description">If you've rented your own truck but need help with the heavy lifting, our team can assist with loading and unloading.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing-info">
-        <div class="container">
-            <h2>PRICING & ESTIMATES</h2>
-            <p>We offer transparent pricing with no hidden fees. Our rates are competitive and designed to provide excellent value for the quality of service we deliver.</p>
-            <div class="pricing-details">
-                <div class="pricing-item">
-                    <h3>Hourly Rates</h3>
-                    <p>Our standard moving services are charged at an hourly rate, which includes a professional moving team and a fully-equipped truck. Rates vary based on the size of your move and specific requirements.</p>
-                </div>
-                <div class="pricing-item">
-                    <h3>Flat Rate Options</h3>
-                    <p>For certain types of moves, we offer flat rate pricing that gives you certainty about the total cost upfront. This is particularly popular for long-distance moves or standard delivery services.</p>
-                </div>
-            </div>
-            <div class="estimate-cta" style="text-align: center;">
-                <h3>READY TO GET STARTED?</h3>
-                <p>Fill out our detailed estimate form to receive a personalized quote for your move.</p>
-                <a href="estimates.html" class="cta-button">Get Your Free Estimate</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer-section">
-        <div class="container footer-container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3 class="footer-title">A GOOD GUY MOVING LTD.</h3>
-                    <p class="tagline">We take the stress out of moving</p>
-                    <img src="logos/White logo - no background.png" alt="A Good Guy Moving Ltd. Logo" class="footer-logo logo-image">
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">OFFICE HOURS</h3>
-                    <p>Monday to Friday<br>9:00 am to 5:00 pm</p>
-                    <p>Saturdays<br>Noon to 4:00 p.m.</p>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">CONTACT US</h3>
-                    <p>Jeffrey Robson - Estimates<br>
-                    Phone: (403) 437-9441<br>
-                    Email: jeffreyrobson@agoodguymoving.com</p>
-
-                </div>
-                <div class="footer-column">
-                        <h3 class="footer-title">GET SOCIAL</h3>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/agoodguymoving/" class="social-icon" aria-label="Facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/agoodguymovingltd/" class="social-icon" aria-label="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                                </svg>
-                            </a>
+        <section class="packages-section" aria-labelledby="packages-title">
+            <div class="container packages-container">
+                <h2 id="packages-title" class="section-title">PACKAGED SERVICES</h2>
+                <div class="card-container package-card-container" role="list">
+                    <div class="content-card package-card" role="listitem">
+                        <div class="card-icon package-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#ff6b00">
+                                <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h12v16z"/>
+                                <path d="M8 6h8v2H8zm0 4h8v2H8zm0 4h8v2H8z"/>
+                            </svg>
                         </div>
+                        <h3 class="card-title">Move and Store</h3>
+                        <ul class="list-content package-list">
+                            <li class="list-item package-item">Overnight Storage</li>
+                            <li class="list-item package-item">Weekly Storage</li>
+                            <li class="list-item package-item">Monthly Storage</li>
+                            <li class="list-item package-item">Junk Removal</li>
+                        </ul>
+                        <p class="card-description">Need time between moving out and moving in? Our secure storage options paired with our moving service ensure your belongings are safe until you're ready for them.</p>
                     </div>
+                    <div class="content-card package-card" role="listitem">
+                        <div class="card-icon package-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#ff6b00">
+                                <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Move Only</h3>
+                        <ul class="list-content package-list">
+                            <li class="list-item package-item">Rate Per Hour</li>
+                            <li class="list-item package-item">Flat Rate for Deliveries</li>
+                            <li class="list-item package-item">Long or Short Distance</li>
+                            <li class="list-item package-item">No Hidden Fees</li>
+                        </ul>
+                        <p class="card-description">Our basic service focuses on efficiently moving your packed belongings from one location to another, with transparent pricing and professional care.</p>
+                    </div>
+                </div>
+                <div class="coming-soon">AVAILABLE SOON</div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 A Good Guy Moving Ltd. All Rights Reserved.</p>
+
+            <div class="coming-soon-package"> <!-- Start wrapper -->
+                <div class="content-card package-card" role="listitem">
+                    <div class="card-icon package-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#ff6b00">
+                        <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                        <path d="M8 13h8v2H8z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Full Pack & Move</h3>
+                <ul class="list-content package-list">
+                    <li class="list-item package-item">Packing Service</li>
+                    <li class="list-item package-item">Cleaning Service</li>
+                    <li class="list-item package-item">Moving Service</li>
+                    <li class="list-item package-item">Junk Removal</li>
+                </ul>
+                <p class="card-description">Our comprehensive service where we handle everything from packing your belongings to cleaning and moving. Perfect for those who want a completely stress-free experience.</p>
+            </div>
+        </div> <!-- End wrapper -->
+        </section>
+
+        <section class="services-section additional-services" aria-labelledby="additional-services-title">
+            <div class="container services-container">
+                <h2 id="additional-services-title" class="section-title">ADDITIONAL SERVICES</h2>
+                <div class="list-container service-list-container" role="list">
+                    <div class="list-item service-item" role="listitem">
+                        <h3 class="list-title">Furniture Assembly/Disassembly</h3>
+                        <p class="list-description">We can take apart and reassemble your furniture to ensure safe transport and proper setup in your new space.</p>
+                    </div>
+                    <div class="list-item service-item" role="listitem">
+                        <h3 class="list-title">Specialty Item Moving</h3>
+                        <p class="list-description">From pianos to pool tables, we have the expertise to move your valuable specialty items with care.</p>
+                    </div>
+                    <div class="list-item service-item" role="listitem">
+                        <h3 class="list-title">Commercial Moving</h3>
+                        <p class="list-description">We help businesses relocate with minimal downtime, carefully moving office equipment, furniture, and files.</p>
+                    </div>
+                    <div class="list-item service-item" role="listitem">
+                        <h3 class="list-title">Loading & Unloading</h3>
+                        <p class="list-description">If you've rented your own truck but need help with the heavy lifting, our team can assist with loading and unloading.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-info" aria-labelledby="pricing-title">
+            <div class="container">
+                <h2 id="pricing-title">PRICING & ESTIMATES</h2>
+                <p>We offer transparent pricing with no hidden fees. Our rates are competitive and designed to provide excellent value for the quality of service we deliver.</p>
+                <div class="pricing-details" role="list">
+                    <div class="pricing-item" role="listitem">
+                        <h3>Hourly Rates</h3>
+                        <p>Our standard moving services are charged at an hourly rate, which includes a professional moving team and a fully-equipped truck. Rates vary based on the size of your move and specific requirements.</p>
+                    </div>
+                    <div class="pricing-item" role="listitem">
+                        <h3>Flat Rate Options</h3>
+                        <p>For certain types of moves, we offer flat rate pricing that gives you certainty about the total cost upfront. This is particularly popular for long-distance moves or standard delivery services.</p>
+                    </div>
+                </div>
+                <div class="estimate-cta" style="text-align: center;">
+                    <h3>READY TO GET STARTED?</h3>
+                    <p>Fill out our detailed estimate form to receive a personalized quote for your move.</p>
+                    <a href="estimates.html" class="cta-button">Get Your Free Estimate</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-columns" role="complementary">
+                <div class="footer-column" aria-labelledby="company-info">
+                    <h3 id="company-info" class="footer-title">A GOOD GUY MOVING LTD.</h3>
+                    <p class="tagline">We take the stress out of moving</p>
+                    <img src="logos/White logo - no background.png"
+                         alt="A Good Guy Moving Ltd. Logo"
+                         class="footer-logo logo-image"
+                         width="150"
+                         height="60"
+                         loading="lazy">
+                </div>
+                <div class="footer-column" aria-labelledby="hours-info">
+                    <h3 id="hours-info" class="footer-title">OFFICE HOURS</h3>
+                    <dl class="hours-list">
+                        <dt>Monday to Friday</dt>
+                        <dd>9:00 am to 5:00 pm</dd>
+                        <dt>Saturdays</dt>
+                        <dd>Noon to 4:00 p.m.</dd>
+                    </dl>
+                </div>
+                <div class="footer-column" aria-labelledby="contact-info">
+                    <h3 id="contact-info" class="footer-title">CONTACT US</h3>
+                    <address>
+                        <strong>Jeffrey Robson - Estimates</strong><br>
+                        <a href="tel:+14034379441" aria-label="Call us at 403-437-9441">Phone: (403) 437-9441</a><br>
+                        <a href="mailto:jeffreyrobson@agoodguymoving.com" aria-label="Email us">Email: jeffreyrobson@agoodguymoving.com</a>
+                    </address>
+                </div>
+                <div class="footer-column" aria-labelledby="social-info">
+                    <h3 id="social-info" class="footer-title">GET SOCIAL</h3>
+                    <div class="social-icons" aria-label="Social media links">
+                        <a href="https://www.facebook.com/agoodguymoving/"
+                           class="social-icon"
+                           aria-label="Visit our Facebook page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/agoodguymovingltd/"
+                           class="social-icon"
+                           aria-label="Visit our Instagram page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright" role="contentinfo">
+                <p lang="en">&copy; <time datetime="2025">2025</time> A Good Guy Moving Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Include ARIA landmark for skiplink target -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            padding: 8px;
+            z-index: 100;
+            background: #fff;
+            color: #000;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 </body>
 </html>

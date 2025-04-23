@@ -1,23 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;">
-    <meta name="description" content="Learn about A Good Guy Moving Ltd., our team, values, and commitment to providing stress-free moving services for residential and commercial clients.">
+    <meta name="description" content="Learn about A Good Guy Moving Ltd., our team, values, and commitment to providing stress-free moving services for residential and commercial clients in Calgary, Alberta.">
+    <meta name="keywords" content="moving company Calgary, Calgary movers, Alberta movers, professional moving services Calgary, residential moving Calgary, commercial moving Calgary, storage solutions Calgary, junk removal Calgary">
+    <meta name="author" content="A Good Guy Moving Ltd.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="About Us | A Good Guy Moving Ltd. - Calgary Movers">
+    <meta property="og:description" content="Learn about A Good Guy Moving Ltd., our team, values, and commitment to providing stress-free moving services for residential and commercial clients in Calgary, Alberta.">
+    <meta property="og:image" content="/logos/Color_logo_no_background.png">
+    <meta property="og:url" content="https://www.agoodguymoving.com/about.html">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>About Us | A Good Guy Moving Ltd.</title>
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="canonical" href="https://www.agoodguymoving.com/about.html">
+
+    <title>About Us | A Good Guy Moving Ltd. - Calgary Movers</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="logos/Color_logo_no_background.png" as="image">
+    <link rel="preload" href="images/jeffery.JPG" as="image">
 </head>
 <body>
-<header class="header-section">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header-section" role="banner">
         <div class="container header-container">
             <div class="site-logo logo">
-                <img src="logos/Color logo - no background.png" alt="A Good Guy Moving Ltd. Logo" class="logo-image">
+                <a href="index.html">
+                    <img src="logos/Color logo - no background.png" alt="A Good Guy Moving Ltd. Logo" class="logo-image" width="200" height="80">
+                </a>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" hidden>
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list" id="main-menu" role="menubar">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
                     <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
@@ -29,99 +52,146 @@
         </div>
     </header>
 
-    <section class="page-header-section">
-        <div class="container page-header-container">
-            <h2 class="page-title">ABOUT US</h2>
-        </div>
-    </section>
-    
-    <section class="page-content about-content">
-        <div class="container page-container">
-            <div class="content-section team-section">
-                <h3 class="section-title">MEET THE TEAM</h3>
-                <div class="card-container team-card-container">
-                    <div class="content-card team-card">
-                        <img src="images/jeffery.JPG" alt="Jeffrey Robson" class="card-image team-image">
-                        <h4 class="card-title">Jeffrey Robson</h4>
-                        <p class="card-subtitle">Founder</p>
-                        <p class="card-description">With over 15 years in the moving industry, Jeff brings experience and a client-first mentality to every project.</p>
-                    </div>
-                </div>
+    <main id="main-content" role="main">
+        <section class="page-header-section" aria-labelledby="page-title">
+            <div class="container page-header-container">
+                <h1 id="page-title" class="page-title">ABOUT US</h1>
             </div>
+        </section>
 
-            <div class="content-section story-section">
-                <div class="content-columns section-content">
-                    <div class="content-column">
-                        <h3 class="section-title">OUR STORY</h3>
-                        <p class="section-description">A Good Guy Moving Ltd. was founded with a simple mission: to provide honest, reliable, and stress-free moving services for residential and commercial clients. What started as a small operation has grown into a trusted moving company serving the community with the same care and dedication as day one.</p>
-                        <p class="section-description">Our team consists of trained professionals who understand that moving is more than just transporting items from one place to another—it's about helping people transition to new chapters in their lives with minimal stress and maximum care.</p>
+        <section class="page-content about-content">
+            <div class="container page-container">
+                <section class="content-section team-section" aria-labelledby="team-title">
+                    <h2 id="team-title" class="section-title">MEET THE TEAM</h2>
+                    <div class="card-container team-card-container" role="list">
+                        <div class="content-card team-card" role="listitem">
+                            <img src="images/jeffery.JPG" alt="Jeffrey Robson, Founder of A Good Guy Moving Ltd." class="card-image team-image" width="180" height="180">
+                            <h3 class="card-title">Jeffrey Robson</h3>
+                            <p class="card-subtitle">Founder</p>
+                            <p class="card-description">With over 15 years in the moving industry, Jeff brings experience and a client-first mentality to every project.</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="content-section values-section">
-                <h3 class="section-title">OUR VALUES</h3>
-                <div class="card-container values-card-container">
-                    <div class="content-card value-card">
-                        <h4 class="card-title">Honesty</h4>
-                        <p class="card-description">We believe in transparent pricing with no hidden fees or unexpected charges.</p>
-                    </div>
-                    <div class="content-card value-card">
-                        <h4 class="card-title">Reliability</h4>
-                        <p class="card-description">We show up on time, every time, and deliver as promised.</p>
-                    </div>
-                    <div class="content-card value-card">
-                        <h4 class="card-title">Care</h4>
-                        <p class="card-description">We handle your belongings as if they were our own, with the utmost attention and respect.</p>
-                    </div>
-                    <div class="content-card value-card">
-                        <h4 class="card-title">Safety</h4>
-                        <p class="card-description">The wellbeing of our team and the security of your items are our top priorities.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </section>
 
-    <footer class="footer-section">
+                <section class="content-section story-section" aria-labelledby="story-title">
+                    <div class="content-columns section-content">
+                        <div class="content-column">
+                            <h2 id="story-title" class="section-title">OUR STORY</h2>
+                            <p class="section-description">A Good Guy Moving Ltd. was founded with a simple mission: to provide honest, reliable, and stress-free moving services for residential and commercial clients. What started as a small operation has grown into a trusted moving company serving the community with the same care and dedication as day one.</p>
+                            <p class="section-description">Our team consists of trained professionals who understand that moving is more than just transporting items from one place to another—it's about helping people transition to new chapters in their lives with minimal stress and maximum care.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section values-section" aria-labelledby="values-title">
+                    <h2 id="values-title" class="section-title">OUR VALUES</h2>
+                    <div class="card-container values-card-container" role="list">
+                        <div class="content-card value-card" role="listitem">
+                            <h3 class="card-title">Honesty</h3>
+                            <p class="card-description">We believe in transparent pricing with no hidden fees or unexpected charges.</p>
+                        </div>
+                        <div class="content-card value-card" role="listitem">
+                            <h3 class="card-title">Reliability</h3>
+                            <p class="card-description">We show up on time, every time, and deliver as promised.</p>
+                        </div>
+                        <div class="content-card value-card" role="listitem">
+                            <h3 class="card-title">Care</h3>
+                            <p class="card-description">We handle your belongings as if they were our own, with the utmost attention and respect.</p>
+                        </div>
+                        <div class="content-card value-card" role="listitem">
+                            <h3 class="card-title">Safety</h3>
+                            <p class="card-description">The wellbeing of our team and the security of your items are our top priorities.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section" role="contentinfo">
         <div class="container footer-container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3 class="footer-title">A GOOD GUY MOVING LTD.</h3>
+            <div class="footer-columns" role="complementary">
+                <div class="footer-column" aria-labelledby="company-info">
+                    <h3 id="company-info" class="footer-title">A GOOD GUY MOVING LTD.</h3>
                     <p class="tagline">We take the stress out of moving</p>
-                    <img src="logos/White logo - no background.png" alt="A Good Guy Moving Ltd. Logo" class="footer-logo logo-image">
+                    <img src="logos/White logo - no background.png"
+                         alt="A Good Guy Moving Ltd. Logo"
+                         class="footer-logo logo-image"
+                         width="150"
+                         height="60"
+                         loading="lazy">
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">OFFICE HOURS</h3>
-                    <p>Monday to Friday<br>9:00 am to 5:00 pm</p>
-                    <p>Saturdays<br>Noon to 4:00 p.m.</p>
+                <div class="footer-column" aria-labelledby="hours-info">
+                    <h3 id="hours-info" class="footer-title">OFFICE HOURS</h3>
+                    <dl class="hours-list">
+                        <dt>Monday to Friday</dt>
+                        <dd>9:00 am to 5:00 pm</dd>
+                        <dt>Saturdays</dt>
+                        <dd>Noon to 4:00 p.m.</dd>
+                    </dl>
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">CONTACT US</h3>
-                    <p>Jeffrey Robson - Owner<br>
-                    Phone: (403) 437-9441<br>
-                    Email: jeffreyrobson@agoodguymoving.com</p>
+                <div class="footer-column" aria-labelledby="contact-info">
+                    <h3 id="contact-info" class="footer-title">CONTACT US</h3>
+                    <address>
+                        <strong>Jeffrey Robson - Owner</strong><br>
+                        <a href="tel:+14034379441" aria-label="Call us at 403-437-9441">Phone: (403) 437-9441</a><br>
+                        <a href="mailto:jeffreyrobson@agoodguymoving.com" aria-label="Email us">Email: jeffreyrobson@agoodguymoving.com</a>
+                    </address>
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">GET SOCIAL</h3>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/agoodguymoving/" class="social-icon" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <div class="footer-column" aria-labelledby="social-info">
+                    <h3 id="social-info" class="footer-title">GET SOCIAL</h3>
+                    <div class="social-icons" aria-label="Social media links">
+                        <a href="https://www.facebook.com/agoodguymoving/"
+                           class="social-icon"
+                           aria-label="Visit our Facebook page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/agoodguymovingltd/" class="social-icon" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <a href="https://www.instagram.com/agoodguymovingltd/"
+                           class="social-icon"
+                           aria-label="Visit our Instagram page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                 <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 A Good Guy Moving Ltd. All Rights Reserved.</p>
+            <div class="copyright" role="contentinfo">
+                <p lang="en">&copy; <time datetime="2025">2025</time> A Good Guy Moving Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Include ARIA landmark for skiplink target -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            padding: 8px;
+            z-index: 100;
+            background: #fff;
+            color: #000;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 </body>
 </html>

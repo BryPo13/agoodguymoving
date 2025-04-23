@@ -85,6 +85,12 @@
 html {
     scroll-behavior: smooth;
     font-size: 100%; /* Use percentage for better accessibility scaling */
+    color-scheme: light; /* Force light mode */
+}
+
+:root {
+    color-scheme: light; /* Force light mode */
+    forced-color-adjust: none; /* Prevent forced colors */
 }
 
 body {
@@ -94,6 +100,57 @@ body {
     background-color: var(--color-grey-medium);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color-scheme: light;
+}
+
+/* Force light mode styles */
+.content-card,
+.page-content,
+.services-section,
+.packages-section,
+.testimonials-section,
+.contact-content,
+.estimate-form-section,
+.error-container,
+.pricing-info,
+.header-section,
+.page-header-section,
+form,
+input,
+textarea,
+select,
+.package-card,
+.service-card {
+    background-color: var(--color-white) !important;
+    color: var(--color-text) !important;
+}
+
+/* Force light text colors */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading) !important;
+}
+
+p:not(.footer-section p), 
+li:not(.footer-section li) {
+    color: var(--color-text) !important;
+}
+
+/* Force white text for footer elements */
+.footer-section {
+    color: var(--color-white) !important;
+}
+
+/* Preserve specific dark sections */
+.hero-section,
+.footer-section,
+.testimonial-preview {
+    color: var(--color-white) !important;
+}
+
+/* Force light backgrounds on inputs */
+input, textarea, select {
+    background-color: var(--color-white) !important;
+    border-color: var(--color-input-border) !important;
 }
 
 img, svg, video {
@@ -164,15 +221,15 @@ li {
 .cta-button {
     display: inline-block;
     background: var(--gradient-primary);
-    color: var(--color-white);
+    color: var(--color-white) !important; /* Force white text */
     padding: var(--space-sm) var(--space-lg);
     border-radius: var(--border-radius-pill);
-    font-weight: 600;
+    font-weight: 700; /* Increase font weight */
     transition: var(--transition-base);
     box-shadow: var(--shadow-primary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-size: var(--text-sm);
+    font-size: var(--text-base-size); /* Increase font size */
     border: none;
     cursor: pointer;
     text-align: center;
@@ -252,14 +309,20 @@ li {
 }
 
 .main-nav .nav-link { /* Use .nav-link consistently */
-    color: var(--color-text-muted);
-    font-weight: 600;
+    color: var(--color-heading); /* Darker text color for better contrast */
+    font-weight: 700; /* Increased weight */
     padding: var(--space-sm) var(--space-md);
     position: relative;
     border-radius: var(--border-radius-sm);
     transition: var(--transition-base);
     font-size: var(--text-base-size);
     text-decoration: none; /* Ensure no default underline */
+}
+
+/* Ensure CTA button in nav is white text */
+.main-nav .nav-link.cta-button {
+    color: var(--color-white) !important;
+    font-weight: 700;
 }
 
 .main-nav .nav-link:hover,
@@ -298,7 +361,7 @@ li {
 /* 6. Footer
 -------------------------------------------------- */
 .footer-section {
-    background-color: var(--color-grey-dark);
+    background-color: #333333; /* Darker background for better contrast */
     color: var(--color-white);
     padding: var(--space-xl) 0 var(--space-md);
     position: relative;
@@ -319,13 +382,22 @@ li {
 
 .footer-container .footer-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: var(--space-lg);
     margin-bottom: var(--space-lg);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-column {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-column .footer-title { /* Use .footer-title consistently */
-    color: var(--color-primary-light);
+    color: var(--color-white) !important;
     margin-bottom: var(--space-md);
     text-align: left;
     position: relative;
@@ -345,11 +417,19 @@ li {
 }
 
 .footer-column p,
-.footer-column li {
-    font-size: var(--text-sm);
-    color: var(--color-grey-light);
+.footer-column li,
+.footer-column a {
+    font-size: calc(var(--text-base-size) * 0.9); /* Slightly smaller text */
+    color: var(--color-white) !important; /* Force white text */
     margin-bottom: var(--space-sm);
-    line-height: 1.5;
+    line-height: 1.6; /* Slightly tighter line height */
+    font-weight: 500; /* Slightly reduced weight for better readability */
+    letter-spacing: 0.3px; /* Reduced letter spacing */
+    -webkit-font-smoothing: antialiased; /* Smoother text rendering */
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 250px; /* Maximum width for text blocks */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-column .tagline {
@@ -394,12 +474,40 @@ li {
     box-shadow: var(--shadow-md);
 }
 
+/* Footer color overrides - targeting exact DOM structure */
+.footer-section,
+.footer-section .container,
+.footer-section .footer-container,
+.footer-section .footer-columns,
+.footer-section .footer-column,
+.footer-section .footer-title,
+.footer-section p,
+.footer-section .copyright,
+.footer-section .copyright p,
+.container.footer-container .copyright p,
+html body .footer-section .container .copyright p,
+.footer-section .container.footer-container > .copyright > p {
+    color: var(--color-white) !important;
+}
+
+/* Additional specificity for copyright section */
+.footer-section > .container > .copyright,
+.footer-container > .copyright > p,
+div.copyright p,
+.footer-section div.copyright p {
+    color: var(--color-white) !important;
+}
+
+
 .copyright {
     text-align: center;
     padding-top: var(--space-lg);
-    border-top: var(--border-width) solid rgba(255, 255, 255, 0.1);
-    font-size: var(--text-sm);
-    color: var(--color-grey-light);
+    border-top: var(--border-width) solid rgba(255, 255, 255, 0.2);
+    font-size: var(--text-base-size); /* Increased from text-sm */
+    font-weight: 600; /* Even bolder font */
+    letter-spacing: 0.5px; /* More letter spacing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* 7. Page Specific Headers
@@ -459,8 +567,13 @@ li {
 /* Card Containers */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 450px));
     gap: var(--space-lg);
+    justify-content: center; /* Center the grid items */
+}
+
+.package-card-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 450px)); /* Match coming-soon card width */
 }
 
 /* Generic Card Style */
@@ -553,14 +666,38 @@ li {
 }
 
 /* Index Page - Services Overview ("Get Moving With Us") */
+.services-section .service-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force exactly 3 columns */
+    gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .services-section .service-card {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-white) 0%, var(--color-grey-light) 100%);
 }
+
 .services-section .service-card .card-title {
     text-align: center;
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-md);
 }
+
+.services-section .service-card .card-description {
+    flex-grow: 1;
+    margin-bottom: var(--space-lg);
+}
+
 .services-section .service-card .cta-button {
-    margin-top: var(--space-md);
+    margin-top: auto;
+    align-self: center;
 }
 
 /* Index/Services Page - Packages */
@@ -604,16 +741,28 @@ li {
     letter-spacing: 1px;
     max-width: 200px; /* Limit width */
     margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
-/* Style for the standalone package card (e.g., Coming Soon section) */
-.packages-section > .package-card { /* Corrected selector: direct child of packages-section */
-    max-width: 600px; /* Adjust as needed */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: var(--space-lg); /* Add some top margin */
+/* Styles for the "Coming Soon" package wrapper and its contents */
+.coming-soon-package {
+    max-width: 450px; /* Set max-width on the wrapper */
+    margin: var(--space-xl) auto 0; /* Center the wrapper and add top margin */
+    padding: 0 var(--space-md); /* Add horizontal padding if needed */
 }
+
+.coming-soon-package .coming-soon {
+    /* Keep existing styles, ensure it's centered if needed */
+    margin-bottom: var(--space-md); /* Add space below the heading */
+    max-width: 100%; /* Allow it to fill the wrapper width */
+}
+
+.coming-soon-package .package-card {
+    margin-top: 0; /* Reset top margin as wrapper handles spacing */
+    width: 100%; /* Make card fill the wrapper */
+}
+
 
 /* Index/Testimonials Page - Testimonial Preview / Cards */
 .testimonials-section { /* Container for testimonials on testimonials.html */
@@ -792,7 +941,8 @@ li {
     grid-template-columns: 1fr 1.5fr; /* Adjust column ratio */
     gap: var(--space-xl);
 }
-.contact-content .contact-info .contact-card {
+.contact-content .contact-info .contact-card,
+.contact-content .contact-info .contact-person-card { /* Added rule for person cards */
     background-color: var(--color-grey-light);
     border-left: 5px solid var(--color-primary);
     border-radius: var(--border-radius-sm);
@@ -800,11 +950,13 @@ li {
     margin-bottom: var(--space-lg); /* Add spacing between cards */
 }
 .contact-content .contact-info .contact-card h3,
-.contact-content .contact-info .contact-card h4 {
+.contact-content .contact-info .contact-card h4,
+.contact-content .contact-info .contact-person-card h4 { /* Added rule for person card titles */
     text-align: left;
     color: var(--color-heading);
 }
-.contact-content .contact-info .contact-card h4 {
+.contact-content .contact-info .contact-card h4,
+.contact-content .contact-info .contact-person-card h4 { /* Added rule for person card titles */
     margin-top: var(--space-sm);
     margin-bottom: var(--space-xs);
     font-size: var(--text-base-size);
@@ -988,8 +1140,18 @@ fieldset legend {
  @media (min-width: 768px) { /* Adjust grid on larger screens */
      .address-grid {
          grid-template-columns: repeat(3, 1fr);
-     }
- }
+    }
+}
+
+/* Override for copyright text (placed at the end for maximum specificity) */
+.footer-section .container.footer-container > .copyright > p,
+footer[class="footer-section"] .container[class="footer-container"] .copyright p,
+.footer-section .footer-container .copyright p,
+.footer-section .copyright > p:only-child,
+.container > .copyright > p {
+    color: var(--color-white) !important;
+    font-weight: 600 !important;
+}
 
  /* Inventory Grid */
  .inventory-grid {
@@ -1075,6 +1237,11 @@ label.error {
     .container {
         width: 92%;
     }
+    
+    .services-section .service-card-container {
+        grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+        gap: var(--space-md); /* Slightly reduce gap */
+    }
     .hero-section .hero-content {
         grid-template-columns: 1fr; /* Stack hero content */
         text-align: center;
@@ -1097,6 +1264,10 @@ label.error {
 @media (max-width: 768px) {
     /* Tablets and smaller */
     html { font-size: 93.75%; } /* 15px base */
+    
+    .services-section .service-card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
 
     .container {
         width: 95%;
@@ -1176,6 +1347,12 @@ label.error {
 @media (max-width: 576px) {
     /* Small mobile */
     html { font-size: 87.5%; } /* 14px base */
+    
+    .services-section .service-card-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        max-width: 450px; /* Match the width of other cards */
+        margin: 0 auto;
+    }
 
     .main-nav .nav-link {
         padding: var(--space-sm); /* Slightly smaller padding */

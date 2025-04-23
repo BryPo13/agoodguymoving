@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;">
-    <meta name="description" content="Contact A Good Guy Moving Ltd. for reliable, stress-free moving services. Get in touch with our team for estimates, bookings, or any questions about our services.">
+    <meta name="description" content="Contact A Good Guy Moving Ltd. for reliable, stress-free moving services in Calgary, Alberta. Get in touch with our Calgary team for estimates, bookings, or any questions about our services.">
+    <meta name="keywords" content="contact movers Calgary, moving company phone number Calgary, moving company email Calgary, get a moving estimate Calgary, book movers Calgary, Calgary moving company, Alberta moving company">
+    <meta name="author" content="A Good Guy Moving Ltd.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact Us | A Good Guy Moving Ltd. - Calgary, Alberta">
+    <meta property="og:description" content="Contact A Good Guy Moving Ltd. for reliable, stress-free moving services in Calgary, Alberta. Get in touch with our Calgary team for estimates, bookings, or any questions about our services.">
+    <meta property="og:image" content="/logos/Color_logo_no_background.png">
+    <meta property="og:url" content="https://www.agoodguymoving.com/contact.html">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Contact Us | A Good Guy Moving Ltd.</title>
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="canonical" href="https://www.agoodguymoving.com/contact.html">
+
+    <title>Contact Us | A Good Guy Moving Ltd. - Calgary, Alberta</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="logos/Color_logo_no_background.png" as="image">
 </head>
 <body>
-    <header class="header-section">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header-section" role="banner">
         <div class="container header-container">
             <div class="site-logo logo">
-                <img src="logos/Color logo - no background.svg" alt="A Good Guy Moving Ltd. Logo" class="logo-image">
+                <a href="index.html">
+                    <img src="logos/Color logo - no background.svg" alt="A Good Guy Moving Ltd. Logo" class="logo-image" width="200" height="80">
+                </a>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" hidden>
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list" id="main-menu" role="menubar">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                     <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
@@ -29,127 +51,190 @@
         </div>
     </header>
 
-    <section class="page-header-section">
-        <div class="container page-header-container">
-            <h2 class="page-title">CONTACT US</h2>
-        </div>
-    </section>
+    <main id="main-content" role="main">
+        <section class="page-header-section" aria-labelledby="page-title">
+            <div class="container page-header-container">
+                <h1 id="page-title" class="page-title">CONTACT US</h1>
+            </div>
+        </section>
 
-    <section class="page-content contact-content">
-        <div class="container page-container">
-            <div class="contact-columns">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3>OFFICE HOURS</h3>
-                        <p>Monday to Friday<br>9:00 am to 5:00 pm</p>
-                        <p>Saturdays<br>Noon to 4:00 p.m.</p>
+        <section class="page-content contact-content" aria-labelledby="contact-heading">
+            <div class="container page-container">
+                <h2 id="contact-heading" class="section-title sr-only">Contact Information and Form</h2>
+                <div class="contact-columns">
+                    <div class="contact-info" role="complementary">
+                        <div class="contact-card" aria-labelledby="hours-info">
+                            <h3 id="hours-info">OFFICE HOURS</h3>
+                            <dl class="hours-list">
+                                <dt>Monday to Friday</dt>
+                                <dd>9:00 am to 5:00 pm</dd>
+                                <dt>Saturdays</dt>
+                                <dd>Noon to 4:00 p.m.</dd>
+                            </dl>
+                        </div>
+
+                        <div class="contact-card" aria-labelledby="contact-details-heading">
+                            <h3 id="contact-details-heading">CONTACT INFORMATION</h3>
+                            <div class="card-container" role="list">
+                                <div class="contact-person-card" role="listitem" aria-labelledby="jeffrey-contact">
+                                    <h4 id="jeffrey-contact">Jeffrey Robson - Founder</h4>
+                                    <p><a href="tel:+14034379441" aria-label="Call Jeffrey Robson at 403-437-9441">Phone: (403) 437-9441</a></p>
+                                    <p><a href="mailto:jeffreyrobson@agoodguymoving.com" aria-label="Email Jeffrey Robson">Email: jeffreyrobson@agoodguymoving.com</a></p>
+                                </div>
+                                <div class="contact-person-card" role="listitem" aria-labelledby="megan-contact">
+                                    <h4 id="megan-contact">Megan Phillips - Estimates & Bookings</h4>
+                                    <p><a href="tel:+14034376330" aria-label="Call Megan Phillips at 403-437-6330">Phone: (403) 437-6330</a></p>
+                                    <p><a href="mailto:meganphillips@agoodguymoving.com" aria-label="Email Megan Phillips">Email: meganphillips@agoodguymoving.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-card" aria-labelledby="social-info">
+                            <h3 id="social-info">GET SOCIAL</h3>
+                            <div class="social-icons" aria-label="Social media links">
+                                <a href="https://www.facebook.com/agoodguymoving/"
+                                   class="social-icon"
+                                   aria-label="Visit our Facebook page"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/agoodguymovingltd/"
+                                   class="social-icon"
+                                   aria-label="Visit our Instagram page"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="contact-card">
-                        <h3>CONTACT INFORMATION</h3>
-                        <div class="contact-person">
-                            <h4>Jeffrey Robson - Founder</h4>
-                            <p>Phone: (403) 437-9441</p>
-                            <p>Email: jeffreyrobson@agoodguymoving.com</p>
-                        </div>
-                        <div class="contact-person">
-                            <h4>Megan Phillips - Estimates & Bookings</h4>
-                            <p>Phone: (403) 437-6330</p>
-                            <p>Email: meganphillips@agoodguymoving.com</p>
-                        </div>
+                    <div class="contact-form-container" role="form" aria-labelledby="message-heading">
+                        <h3 id="message-heading">SEND US A MESSAGE</h3>
+                        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" autocomplete="on">
+                            <input type="hidden" name="form-name" value="contact">
+                            <p class="hidden">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
+                            <div class="form-group">
+                                <label for="name">Full Name<span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address<span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject<span class="required">*</span></label>
+                                <input type="text" id="subject" name="subject" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message<span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            </div>
+                            <div class="form-group submit-button-container" style="text-align: left;">
+                                <button type="submit" class="cta-button">Send Message</button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="contact-card">
-                        <h3>GET SOCIAL</h3>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/agoodguymoving/" class="social-icon" aria-label="Facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/agoodguymovingltd/" class="social-icon" aria-label="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-container">
-                    <h3>SEND US A MESSAGE</h3>
-                    <form id="contact-form" method="POST" data-netlify="true" name="contact" netlify-honeypot="bot-field" autocomplete="on">
-                        <input type="hidden" name="form-name" value="contact">
-                        <p class="hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                        </p>
-                        <div class="form-group">
-                            <label for="name">Full Name<span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address<span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject<span class="required">*</span></label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message<span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <div class="form-group submit-button-container" style="text-align: left;">
-                            <button type="submit" class="cta-button">Send Message</button>
-                        </div>
-                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="footer-section">
+    <footer class="footer-section" role="contentinfo">
         <div class="container footer-container">
-            <div class="footer-columns"> <div class="footer-column">
-                    <h3 class="footer-title">A GOOD GUY MOVING LTD.</h3>
+            <div class="footer-columns" role="complementary">
+                <div class="footer-column" aria-labelledby="company-info">
+                    <h3 id="company-info" class="footer-title">A GOOD GUY MOVING LTD.</h3>
                     <p class="tagline">We take the stress out of moving</p>
-                    <img src="logos/White logo - no background.png" alt="A Good Guy Moving Ltd. Logo" class="footer-logo logo-image">
+                    <img src="logos/White logo - no background.png"
+                         alt="A Good Guy Moving Ltd. Logo"
+                         class="footer-logo logo-image"
+                         width="150"
+                         height="60"
+                         loading="lazy">
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">OFFICE HOURS</h3>
-                    <p>Monday to Friday<br>9:00 am to 5:00 pm</p>
-                    <p>Saturdays<br>Noon to 4:00 p.m.</p>
+                <div class="footer-column" aria-labelledby="hours-info">
+                    <h3 id="hours-info" class="footer-title">OFFICE HOURS</h3>
+                    <dl class="hours-list">
+                        <dt>Monday to Friday</dt>
+                        <dd>9:00 am to 5:00 pm</dd>
+                        <dt>Saturdays</dt>
+                        <dd>Noon to 4:00 p.m.</dd>
+                    </dl>
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">CONTACT US</h3>
-                    <p>Jeffrey Robson - Estimates<br>
-                    Phone: (403) 437-9441<br>
-                    Email: jeffreyrobson@agoodguymoving.com</p>
+                <div class="footer-column" aria-labelledby="contact-info">
+                    <h3 id="contact-info" class="footer-title">CONTACT US</h3>
+                    <address>
+                        <strong>Jeffrey Robson - Estimates</strong><br>
+                        <a href="tel:+14034379441" aria-label="Call us at 403-437-9441">Phone: (403) 437-9441</a><br>
+                        <a href="mailto:jeffreyrobson@agoodguymoving.com" aria-label="Email us">Email: jeffreyrobson@agoodguymoving.com</a>
+                    </address>
                 </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">GET SOCIAL</h3>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/agoodguymoving/" class="social-icon" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <div class="footer-column" aria-labelledby="social-info">
+                    <h3 id="social-info" class="footer-title">GET SOCIAL</h3>
+                    <div class="social-icons" aria-label="Social media links">
+                        <a href="https://www.facebook.com/agoodguymoving/"
+                           class="social-icon"
+                           aria-label="Visit our Facebook page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/agoodguymovingltd/" class="social-icon" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <a href="https://www.instagram.com/agoodguymovingltd/"
+                           class="social-icon"
+                           aria-label="Visit our Instagram page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                 <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 A Good Guy Moving Ltd. All Rights Reserved.</p>
+            <div class="copyright" role="contentinfo">
+                <p lang="en">&copy; <time datetime="2025">2025</time> A Good Guy Moving Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Include ARIA landmark for skiplink target -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            padding: 8px;
+            z-index: 100;
+            background: #fff;
+            color: #000;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 </body>
 </html>

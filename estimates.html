@@ -1,625 +1,579 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;">
-    <title>Get a Free Moving Estimate - A Good Guy Moving</title>
-    <meta name="description" content="Request a free, no-obligation moving estimate from A Good Guy Moving Ltd. Fill out our detailed form to get an accurate estimate for your upcoming move.">
+    <meta name="description" content="Request a free, no-obligation moving estimate from A Good Guy Moving Ltd. in Calgary, Alberta. Fill out our detailed form to get an accurate estimate for your upcoming move in Calgary.">
+    <meta name="keywords" content="moving estimate Calgary, free quote Calgary, moving cost Calgary, residential moving estimate Calgary, commercial moving estimate Calgary, storage estimate Calgary, junk removal estimate Calgary, Calgary movers, Alberta movers">
+    <meta name="author" content="A Good Guy Moving Ltd.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Get a Free Moving Estimate - A Good Guy Moving - Calgary, Alberta">
+    <meta property="og:description" content="Request a free, no-obligation moving estimate from A Good Guy Moving Ltd. in Calgary, Alberta. Fill out our detailed form to get an accurate estimate for your upcoming move in Calgary.">
+    <meta property="og:image" content="/logos/Color_logo_no_background.png">
+    <meta property="og:url" content="https://www.agoodguymoving.com/estimates.html">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="canonical" href="https://www.agoodguymoving.com/estimates.html">
+
+    <title>Get a Free Moving Estimate - A Good Guy Moving - Calgary, Alberta</title>
     <link rel="stylesheet" href="styles.css">
-    </head>
+    <script src="script.js" defer></script>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="logos/Color_logo_no_background.png" as="image">
+</head>
 <body>
-    <header class="header-section">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header-section" role="banner">
         <div class="container header-container">
             <div class="site-logo logo">
-                 <img src="logos/Color logo - no background.svg" alt="A Good Guy Moving Ltd. Logo" class="logo-image">
+                <a href="index.html">
+                    <img src="logos/Color logo - no background.svg" alt="A Good Guy Moving Ltd. Logo" class="logo-image" width="200" height="80">
+                </a>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" hidden>
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list" id="main-menu" role="menubar">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                     <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                     <li class="nav-item"><a href="estimates.html" class="nav-link cta-button active">Get an Estimate</a></li>
+                    <li class="nav-item"><a href="estimates.html" class="nav-link cta-button active">Get an Estimate</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="page-header-section">
-        <div class="container page-header-container">
-            <h2 class="page-title">GET A FREE ESTIMATE</h2>
-        </div>
-    </section>
-
-    <section class="page-content estimate-form-section">
-        <div class="container page-container">
-
-            <h1>Let's Plan Your Move</h1>
-            <h2>We take the stress out of moving!</h2>
-            <p style="text-align: center; margin-bottom: var(--space-xl);">Fill out the form below for a free, no-obligation estimate. The more details you provide, the more accurate your estimate will be.</p>
-
-            <form id="moving-estimate-form" method="POST" data-netlify="true" name="estimate" netlify-honeypot="bot-field" autocomplete="on">
-                <input type="hidden" name="form-name" value="estimate">
-                <p class="hidden"> <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                </p>
-
-                <section class="form-section">
-                    <h3>1. Contact Information</h3>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="full_name">Full Name<span class="required">*</span></label>
-                            <input type="text" id="full_name" name="full_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone_number">Phone Number<span class="required">*</span></label>
-                            <input type="tel" id="phone_number" name="phone_number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address<span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="form-section">
-                    <h3>2. Moving Details</h3>
-                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
-                        <div class="form-group">
-                            <label for="move_date">Desired Move Date<span class="required">*</span></label>
-                            <input type="date" id="move_date" name="move_date" required>
-                        </div>
-                         <div class="form-group checkbox-group">
-                            <label style="margin-bottom: 0.5rem;">Preferred Time<span class="required">*</span> <span style="font-size: 0.8rem; color: #888; margin-left: 5px;">(Select one or both)</span></label>
-                            <label>
-                                <input type="checkbox" name="move_time[]" value="Morning"> Morning
-                            </label>
-                            <label>
-                                <input type="checkbox" name="move_time[]" value="Afternoon"> Afternoon
-                            </label>
-                        </div>
-
-                        <fieldset style="grid-column: 1 / -1;">
-                            <legend>Current Address<span class="required">*</span></legend>
-                            <div class="address-grid">
-                                 <div class="form-group street-address">
-                                     <label for="current_address" class="hidden">Current Street Address</label>
-                                     <input type="text" id="current_address" name="current_address" required placeholder="Street Address">
-                                 </div>
-                                 <div class="form-group">
-                                     <label for="current_city" class="hidden">Current City</label>
-                                     <input type="text" id="current_city" name="current_city" placeholder="City">
-                                 </div>
-                                 <div class="form-group">
-                                     <label for="current_postal_code" class="hidden">Current Postal Code</label>
-                                     <input type="text" id="current_postal_code" name="current_postal_code" placeholder="Postal Code">
-                                 </div>
-                            </div>
-                        </fieldset>
-
-                         <fieldset style="grid-column: 1 / -1;">
-                            <legend>New Address<span class="required">*</span></legend>
-                            <div class="address-grid">
-                                 <div class="form-group street-address">
-                                     <label for="new_address" class="hidden">New Street Address</label>
-                                     <input type="text" id="new_address" name="new_address" required placeholder="Street Address">
-                                 </div>
-                                 <div class="form-group">
-                                     <label for="new_city" class="hidden">New City</label>
-                                     <input type="text" id="new_city" name="new_city" placeholder="City">
-                                 </div>
-                                 <div class="form-group">
-                                     <label for="new_postal_code" class="hidden">New Postal Code</label>
-                                     <input type="text" id="new_postal_code" name="new_postal_code" placeholder="Postal Code">
-                                 </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                </section>
-
-                <section class="form-section">
-                    <h3>3. Move Type<span class="required">*</span></h3>
-                    <div class="form-group radio-group">
-                        <label>
-                            <input id="move_type_house" name="move_type" type="radio" value="House" required> House
-                        </label>
-                        <label>
-                            <input id="move_type_apartment" name="move_type" type="radio" value="Apartment/Condo"> Apartment/Condo
-                        </label>
-                        <label>
-                            <input id="move_type_office" name="move_type" type="radio" value="Office/Commercial"> Office/Commercial
-                        </label>
-                        <label>
-                            <input id="move_type_storage" name="move_type" type="radio" value="Storage Move"> Storage Move
-                        </label>
-                         <label style="display: flex; align-items: center;">
-                             <input id="move_type_other" name="move_type" type="radio" value="Other"> Other
-                            <input type="text" name="move_type_other_specify" placeholder="Please specify" style="margin-left: 1rem; flex: 1; padding: 0.5rem;">
-                        </label>
-                    </div>
-                </section>
-
-                <section class="form-section">
-                    <h3>4. Home Details</h3>
-                    <div class="form-grid">
-                        <fieldset>
-                            <legend>Current Home</legend>
-                            <div class="form-group">
-                                <label for="current_bedrooms">Number of Bedrooms</label>
-                                <select id="current_bedrooms" name="current_bedrooms">
-                                    <option>Studio</option>
-                                    <option>1</option>
-                                    <option selected>2</option> <option>3</option>
-                                    <option>4+</option>
-                                </select>
-                            </div>
-                            <div class="form-group radio-group">
-                                <label>Elevator Available?<span class="required">*</span></label>
-                                <div style="display: flex; gap: 1rem;">
-                                    <label><input type="radio" name="current_elevator" value="Yes" required> Yes</label>
-                                    <label><input type="radio" name="current_elevator" value="No" required> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group">
-                                <label>Stairs?</label>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <label><input type="radio" name="current_stairs" value="Yes" onclick="toggleFlightsInput('current', true)"> Yes</label>
-                                    <label><input type="radio" name="current_stairs" value="No" checked onclick="toggleFlightsInput('current', false)"> No</label>
-                                    <div id="current_flights_container" class="hidden-conditional form-group" style="flex: 1; margin-bottom: 0;">
-                                        <label for="current_flights" class="hidden">How many flights?</label>
-                                        <input type="number" id="current_flights" name="current_flights" placeholder="How many flights?" min="0">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>New Home</legend>
-                             <div class="form-group">
-                                <label for="new_bedrooms">Number of Bedrooms</label>
-                                <select id="new_bedrooms" name="new_bedrooms">
-                                    <option>Studio</option>
-                                    <option>1</option>
-                                    <option selected>2</option> <option>3</option>
-                                    <option>4+</option>
-                                </select>
-                            </div>
-                            <div class="form-group radio-group">
-                                <label>Elevator Available?<span class="required">*</span></label>
-                                <div style="display: flex; gap: 1rem;">
-                                    <label><input type="radio" name="new_elevator" value="Yes" required> Yes</label>
-                                    <label><input type="radio" name="new_elevator" value="No" required> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group">
-                                <label>Stairs?</label>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <label><input type="radio" name="new_stairs" value="Yes" onclick="toggleFlightsInput('new', true)"> Yes</label>
-                                    <label><input type="radio" name="new_stairs" value="No" checked onclick="toggleFlightsInput('new', false)"> No</label>
-                                    <div id="new_flights_container" class="hidden-conditional form-group" style="flex: 1; margin-bottom: 0;">
-                                        <label for="new_flights" class="hidden">How many flights?</label>
-                                        <input type="number" id="new_flights" name="new_flights" placeholder="How many flights?" min="0">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                </section>
-
-                <section class="form-section">
-                    <h3>5. Moving Services Needed <span style="font-size: 0.9rem; font-weight: normal; color: #666;">(Check all that apply)</span></h3>
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input id="service_disassembly" name="services_needed[]" type="checkbox" value="Furniture Disassembly & Reassembly"> Furniture Disassembly & Reassembly
-                        </label>
-                        <label>
-                            <input id="service_specialty" name="services_needed[]" type="checkbox" value="Specialty Items"> Specialty Items (Piano, Safe, Pool Table, Treadmill, Peloton, etc.)
-                        </label>
-                        <label>
-                            <input id="service_heavy" name="services_needed[]" type="checkbox" value="Items over 300lbs"> Items over 300lbs
-                        </label>
-                         <label>
-                            <input id="service_junk" name="services_needed[]" type="checkbox" value="Junk Removal"> Junk Removal
-                        </label>
-                    </div>
-                </section>
-
-                 <section class="form-section">
-                    <h3>6. Inventory <span style="font-size: 0.9rem; font-weight: normal; color: #666;">(Estimate quantity for each item)</span></h3>
-                    <div class="inventory-grid">
-                        <div class="inventory-item">
-                            <label for="inv_table_chair">Table/Chair</label>
-                            <input type="number" id="inv_table_chair" name="inventory[table_chair]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_bar_stools">Bar / Bar stools</label>
-                            <input type="number" id="inv_bar_stools" name="inventory[bar_stools]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_large_appliances">Large Appliances</label>
-                            <input type="number" id="inv_large_appliances" name="inventory[large_appliances]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_cabinets">Cabinets</label>
-                            <input type="number" id="inv_cabinets" name="inventory[cabinets]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_washer_dryer">Washer/Dryer</label>
-                            <input type="number" id="inv_washer_dryer" name="inventory[washer_dryer]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_sectional_couch">Sectional Couch</label>
-                            <input type="number" id="inv_sectional_couch" name="inventory[sectional_couch]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_couch">Couch</label>
-                            <input type="number" id="inv_couch" name="inventory[couch]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_love_seat">Love Seat</label>
-                            <input type="number" id="inv_love_seat" name="inventory[love_seat]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_living_room_chairs">Living room Chairs</label>
-                            <input type="number" id="inv_living_room_chairs" name="inventory[living_room_chairs]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_coffee_tables">Coffee Tables</label>
-                            <input type="number" id="inv_coffee_tables" name="inventory[coffee_tables]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_end_tables">End Tables</label>
-                            <input type="number" id="inv_end_tables" name="inventory[end_tables]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_lamps">Lamps</label>
-                            <input type="number" id="inv_lamps" name="inventory[lamps]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_rugs">Rugs</label>
-                            <input type="number" id="inv_rugs" name="inventory[rugs]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_fireplace">Fireplace</label>
-                            <input type="number" id="inv_fireplace" name="inventory[fireplace]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_tvs">TV's</label>
-                            <input type="number" id="inv_tvs" name="inventory[tvs]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_cribs">Cribs</label>
-                            <input type="number" id="inv_cribs" name="inventory[cribs]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_mattress_king">Mattress (King)</label>
-                            <input type="number" id="inv_mattress_king" name="inventory[mattress_king]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_mattress_queen">Mattress (Queen)</label>
-                            <input type="number" id="inv_mattress_queen" name="inventory[mattress_queen]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_mattress_full">Mattress (Full)</label>
-                            <input type="number" id="inv_mattress_full" name="inventory[mattress_full]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_night_stands">Night Stands</label>
-                            <input type="number" id="inv_night_stands" name="inventory[night_stands]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_dressers">Dressers</label>
-                            <input type="number" id="inv_dressers" name="inventory[dressers]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_hi_boys">Hi Boys</label>
-                            <input type="number" id="inv_hi_boys" name="inventory[hi_boys]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_chests">Chests</label>
-                            <input type="number" id="inv_chests" name="inventory[chests]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_stools">Stools</label>
-                            <input type="number" id="inv_stools" name="inventory[stools]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_mirrors">Mirrors</label>
-                            <input type="number" id="inv_mirrors" name="inventory[mirrors]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_book_shelfs">Book Shelfs</label>
-                            <input type="number" id="inv_book_shelfs" name="inventory[book_shelfs]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_file_cabinets">File Cabinets</label>
-                            <input type="number" id="inv_file_cabinets" name="inventory[file_cabinets]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_desk">Desk</label>
-                            <input type="number" id="inv_desk" name="inventory[desk]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_office_chair">Office Chair</label>
-                            <input type="number" id="inv_office_chair" name="inventory[office_chair]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_piano">Piano</label>
-                            <input type="number" id="inv_piano" name="inventory[piano]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_treadmill">Treadmill</label>
-                            <input type="number" id="inv_treadmill" name="inventory[treadmill]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_workout_equipment">Workout Equipment</label>
-                            <input type="number" id="inv_workout_equipment" name="inventory[workout_equipment]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_tv_stands">TV Stands</label>
-                            <input type="number" id="inv_tv_stands" name="inventory[tv_stands]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_bed_frame">Bed frame</label>
-                            <input type="number" id="inv_bed_frame" name="inventory[bed_frame]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_wall_art">Wall Art Small/Large</label>
-                            <input type="number" id="inv_wall_art" name="inventory[wall_art]" min="0" value="0">
-                        </div>
-                         <div class="inventory-item">
-                            <label for="inv_mirrors_2">Mirrors (General)</label>
-                            <input type="number" id="inv_mirrors_2" name="inventory[mirrors_general]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_grill">Grill</label>
-                            <input type="number" id="inv_grill" name="inventory[grill]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_outside_furniture">Outside Furniture</label>
-                            <input type="number" id="inv_outside_furniture" name="inventory[outside_furniture]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_tools">Tools</label>
-                            <input type="number" id="inv_tools" name="inventory[tools]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_tires">Tires</label>
-                            <input type="number" id="inv_tires" name="inventory[tires]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_sport_gear">Sport Gear</label>
-                            <input type="number" id="inv_sport_gear" name="inventory[sport_gear]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_pool_tables">Pool Tables</label>
-                            <input type="number" id="inv_pool_tables" name="inventory[pool_tables]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_atvs">ATVs</label>
-                            <input type="number" id="inv_atvs" name="inventory[atvs]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_lawnmower">Lawnmower</label>
-                            <input type="number" id="inv_lawnmower" name="inventory[lawnmower]" min="0" value="0">
-                        </div>
-                          <div class="inventory-item">
-                            <label for="inv_bicycles">Bicycles (Adult/Children)</label>
-                            <input type="number" id="inv_bicycles" name="inventory[bicycles]" min="0" value="0">
-                        </div>
-                         </div>
-                    <div class="form-group" style="margin-top: var(--space-lg);">
-                        <label for="num_boxes">Estimated Number of Boxes<span class="required">*</span></label>
-                        <input type="number" id="num_boxes" name="num_boxes" required min="0" value="0" style="max-width: 150px;">
-                    </div>
-                </section>
-
-                <section class="form-section">
-                     <h3>7. Additional Information</h3>
-                     <div class="form-group">
-                        <label for="additional_info">Any other requests, concerns, or details about your move?</label>
-                        <textarea id="additional_info" name="additional_info" rows="4" placeholder="E.g., specific fragile items, parking restrictions, storage needs..."></textarea>
-                     </div>
-                </section>
-
-                <div class="submit-button-container">
-                    <button type="submit" class="cta-button" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;"> Get My Free Estimate </button>
-                </div>
-
-                 <section class="terms-box">
-                    <h4>Terms and Conditions of Estimate</h4>
-                    <ol>
-                        <li><strong>Non-Binding Estimate:</strong> The estimate provided is based on the information given at the time of inquiry. This estimate is not a guaranteed price and is subject to change based on factors such as additional items, time required, unforeseen circumstances, or changes to the moving conditions.</li>
-                        <li><strong>Accuracy of Inventory & Details:</strong> The customer is responsible for providing an accurate description of the inventory, access conditions (stairs, elevators, long carry distances, etc.), and any special handling requirements. Any discrepancies may result in additional charges.</li>
-                        <li><strong>Hourly & Flat Rate Pricing:</strong>
-                            <ul>
-                                <li>Hourly rates apply from the time our crew arrives at the pickup location until the completion of the move, including loading, unloading, and any required travel time.</li>
-                                <li>Flat-rate pricing, if applicable, is based on the agreed-upon scope of work and does not cover additional services requested on the moving day.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Additional Charges:</strong> The following may result in extra charges:
-                            <ul>
-                                <li>Additional items or services not included in the original estimate</li>
-                                <li>Disassembly/reassembly of furniture</li>
-                                <li>Packing/unpacking services</li>
-                                <li>Long carry distances, stairs, or elevator use not disclosed prior</li>
-                                <li>Delays caused by the customer (waiting time, incomplete packing, lack of access, etc.)</li>
-                                <li>Storage fees if items need to be held before delivery</li>
-                            </ul>
-                        </li>
-                        <li><strong>Cancellation & Rescheduling Policy:</strong>
-                             <ul>
-                                <li>Cancellations made less than 48 hours before the scheduled move may be subject to a cancellation fee.</li>
-                                <li>Rescheduling is subject to availability and may affect the final cost.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
-
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer-section">
-        <div class="container footer-container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3 class="footer-title">A GOOD GUY MOVING LTD.</h3>
-                    <p class="tagline">We take the stress out of moving</p>
-                     <img src="logos/White logo - no background.png" alt="A Good Guy Moving Ltd. Logo" class="footer-logo logo-image">
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">OFFICE HOURS</h3>
-                    <p>Monday to Friday<br>9:00 am to 5:00 pm</p>
-                    <p>Saturdays<br>Noon to 4:00 p.m.</p>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">CONTACT US</h3>
-                    <p>Jeffrey Robson - Estimates<br>
-                    Phone: (403) 437-9441<br>
-                    Email: jeffreyrobson@agoodguymoving.com</p>
-                </div>
-                 <div class="footer-column">
-                    <h3 class="footer-title">GET SOCIAL</h3>
-
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/agoodguymoving/" class="social-icon" aria-label="Facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/agoodguymovingltd/" class="social-icon" aria-label="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+    <main id="main-content" role="main">
+        <section class="page-header-section" aria-labelledby="page-title">
+            <div class="container page-header-container">
+                <h1 id="page-title" class="page-title">GET A FREE ESTIMATE</h1>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 A Good Guy Moving Ltd. All Rights Reserved.</p>
+        </section>
+
+        <section class="page-content estimate-form-section" aria-labelledby="form-main-heading">
+            <div class="container page-container">
+
+                <h2 id="form-main-heading">Let's Plan Your Move</h2>
+                <p>We take the stress out of moving!</p>
+                <p style="text-align: center; margin-bottom: var(--space-xl);">Fill out the form below for a free, no-obligation estimate. The more details you provide, the more accurate your estimate will be.</p>
+
+                <form id="moving-estimate-form" name="estimate" method="POST" data-netlify="true" netlify-honeypot="bot-field" autocomplete="on">
+                    <input type="hidden" name="form-name" value="estimate">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
+                    <section class="form-section" aria-labelledby="contact-info-heading">
+                        <h3 id="contact-info-heading">1. Contact Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="full_name">Full Name<span class="required">*</span></label>
+                                <input type="text" id="full_name" name="full_name" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_number">Phone Number<span class="required">*</span></label>
+                                <input type="tel" id="phone_number" name="phone_number" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address<span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section" aria-labelledby="moving-details-heading">
+                        <h3 id="moving-details-heading">2. Moving Details</h3>
+                        <div class="form-grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
+                            <div class="form-group">
+                                <label for="move_date">Desired Move Date<span class="required">*</span></label>
+                                <input type="date" id="move_date" name="move_date" required aria-required="true">
+                            </div>
+                            <div class="form-group checkbox-group" role="group" aria-labelledby="preferred-time-heading">
+                                <label id="preferred-time-heading" style="margin-bottom: 0.5rem;">Preferred Time<span class="required">*</span> <span style="font-size: 0.8rem; color: #888; margin-left: 5px;">(Select one or both)</span></label>
+                                <label>
+                                    <input type="checkbox" name="move_time[]" value="Morning"> Morning
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="move_time[]" value="Afternoon"> Afternoon
+                                </label>
+                            </div>
+
+                            <fieldset style="grid-column: 1 / -1;">
+                                <legend>Current Address<span class="required">*</span></legend>
+                                <div class="address-grid">
+                                    <div class="form-group street-address">
+                                        <label for="current_address" class="sr-only">Current Street Address</label>
+                                        <input type="text" id="current_address" name="current_address" required aria-required="true" placeholder="Street Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="current_city" class="sr-only">Current City</label>
+                                        <input type="text" id="current_city" name="current_city" placeholder="City">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="current_postal_code" class="sr-only">Current Postal Code</label>
+                                        <input type="text" id="current_postal_code" name="current_postal_code" placeholder="Postal Code">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset style="grid-column: 1 / -1;">
+                                <legend>New Address<span class="required">*</span></legend>
+                                <div class="address-grid">
+                                    <div class="form-group street-address">
+                                        <label for="new_address" class="sr-only">New Street Address</label>
+                                        <input type="text" id="new_address" name="new_address" required aria-required="true" placeholder="Street Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new_city" class="sr-only">New City</label>
+                                        <input type="text" id="new_city" name="new_city" placeholder="City">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new_postal_code" class="sr-only">New Postal Code</label>
+                                        <input type="text" id="new_postal_code" name="new_postal_code" placeholder="Postal Code">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </section>
+
+                    <section class="form-section" aria-labelledby="move-type-heading">
+                        <h3 id="move-type-heading">3. Move Type<span class="required">*</span></h3>
+                        <div class="form-group radio-group" role="radiogroup" aria-labelledby="move-type-heading">
+                            <label>
+                                <input id="move_type_house" name="move_type" type="radio" value="House" required aria-required="true"> House
+                            </label>
+                            <label>
+                                <input id="move_type_apartment" name="move_type" type="radio" value="Apartment/Condo" required aria-required="true"> Apartment/Condo
+                            </label>
+                            <label>
+                                <input id="move_type_office" name="move_type" type="radio" value="Office/Commercial" required aria-required="true"> Office/Commercial
+                            </label>
+                            <label>
+                                <input id="move_type_storage" name="move_type" type="radio" value="Storage Move" required aria-required="true"> Storage Move
+                            </label>
+                            <label style="display: flex; align-items: center;">
+                                <input id="move_type_other" name="move_type" type="radio" value="Other" required aria-required="true"> Other
+                                <input type="text" name="move_type_other_specify" placeholder="Please specify" style="margin-left: 1rem; flex: 1; padding: 0.5rem;">
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="form-section" aria-labelledby="home-details-heading">
+                        <h3 id="home-details-heading">4. Home Details</h3>
+                        <div class="form-grid">
+                            <fieldset aria-labelledby="current-home-legend">
+                                <legend id="current-home-legend">Current Home</legend>
+                                <div class="form-group">
+                                    <label for="current_bedrooms">Number of Bedrooms</label>
+                                    <select id="current_bedrooms" name="current_bedrooms">
+                                        <option>Studio</option>
+                                        <option>1</option>
+                                        <option selected>2</option>
+                                        <option>3</option>
+                                        <option>4+</option>
+                                    </select>
+                                </div>
+                                <div class="form-group radio-group" role="radiogroup" aria-labelledby="current-elevator-heading">
+                                    <label id="current-elevator-heading">Elevator Available?<span class="required">*</span></label>
+                                    <div style="display: flex; gap: 1rem;">
+                                        <label><input type="radio" name="current_elevator" value="Yes" required aria-required="true"> Yes</label>
+                                        <label><input type="radio" name="current_elevator" value="No" required aria-required="true"> No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group radio-group" role="radiogroup" aria-labelledby="current-stairs-heading">
+                                    <label id="current-stairs-heading">Stairs?</label>
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <label><input type="radio" name="current_stairs" value="Yes" onclick="toggleFlightsInput('current', true)"> Yes</label>
+                                        <label><input type="radio" name="current_stairs" value="No" checked onclick="toggleFlightsInput('current', false)"> No</label>
+                                        <div id="current_flights_container" class="hidden-conditional form-group" style="flex: 1; margin-bottom: 0;">
+                                            <label for="current_flights" class="sr-only">How many flights?</label>
+                                            <input type="number" id="current_flights" name="current_flights" placeholder="How many flights?" min="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset aria-labelledby="new-home-legend">
+                                <legend id="new-home-legend">New Home</legend>
+                                <div class="form-group">
+                                    <label for="new_bedrooms">Number of Bedrooms</label>
+                                    <select id="new_bedrooms" name="new_bedrooms">
+                                        <option>Studio</option>
+                                        <option>1</option>
+                                        <option selected>2</option>
+                                        <option>3</option>
+                                        <option>4+</option>
+                                    </select>
+                                </div>
+                                <div class="form-group radio-group" role="radiogroup" aria-labelledby="new-elevator-heading">
+                                    <label id="new-elevator-heading">Elevator Available?<span class="required">*</span></label>
+                                    <div style="display: flex; gap: 1rem;">
+                                        <label><input type="radio" name="new_elevator" value="Yes" required aria-required="true"> Yes</label>
+                                        <label><input type="radio" name="new_elevator" value="No" required aria-required="true"> No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group radio-group" role="radiogroup" aria-labelledby="new-stairs-heading">
+                                    <label id="new-stairs-heading">Stairs?</label>
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <label><input type="radio" name="new_stairs" value="Yes" onclick="toggleFlightsInput('new', true)"> Yes</label>
+                                        <label><input type="radio" name="new_stairs" value="No" checked onclick="toggleFlightsInput('new', false)"> No</label>
+                                        <div id="new_flights_container" class="hidden-conditional form-group" style="flex: 1; margin-bottom: 0;">
+                                            <label for="new_flights" class="sr-only">How many flights?</label>
+                                            <input type="number" id="new_flights" name="new_flights" placeholder="How many flights?" min="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </section>
+
+                    <section class="form-section" aria-labelledby="services-needed-heading">
+                        <h3 id="services-needed-heading">5. Moving Services Needed <span style="font-size: 0.9rem; font-weight: normal; color: #666;">(Check all that apply)</span></h3>
+                        <div class="form-group checkbox-group" role="group" aria-labelledby="services-needed-heading">
+                            <label>
+                                <input id="service_disassembly" name="services_needed[]" type="checkbox" value="Furniture Disassembly & Reassembly"> Furniture Disassembly & Reassembly
+                            </label>
+                            <label>
+                                <input id="service_specialty" name="services_needed[]" type="checkbox" value="Specialty Items"> Specialty Items (Piano, Safe, Pool Table, Treadmill, Peloton, etc.)
+                            </label>
+                            <label>
+                                <input id="service_heavy" name="services_needed[]" type="checkbox" value="Items over 300lbs"> Items over 300lbs
+                            </label>
+                            <label>
+                                <input id="service_junk" name="services_needed[]" type="checkbox" value="Junk Removal"> Junk Removal
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="form-section" aria-labelledby="inventory-heading">
+                        <h3 id="inventory-heading">6. Inventory <span style="font-size: 0.9rem; font-weight: normal; color: #666;">(Estimate quantity for each item)</span></h3>
+                        <div class="inventory-grid" role="list">
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_table_chair">Table/Chair</label>
+                                <input type="number" id="inv_table_chair" name="inventory[table_chair]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_bar_stools">Bar / Bar stools</label>
+                                <input type="number" id="inv_bar_stools" name="inventory[bar_stools]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_large_appliances">Large Appliances</label>
+                                <input type="number" id="inv_large_appliances" name="inventory[large_appliances]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_cabinets">Cabinets</label>
+                                <input type="number" id="inv_cabinets" name="inventory[cabinets]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_washer_dryer">Washer/Dryer</label>
+                                <input type="number" id="inv_washer_dryer" name="inventory[washer_dryer]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_sectional_couch">Sectional Couch</label>
+                                <input type="number" id="inv_sectional_couch" name="inventory[sectional_couch]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_couch">Couch</label>
+                                <input type="number" id="inv_couch" name="inventory[couch]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_love_seat">Love Seat</label>
+                                <input type="number" id="inv_love_seat" name="inventory[love_seat]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_living_room_chairs">Living room Chairs</label>
+                                <input type="number" id="inv_living_room_chairs" name="inventory[living_room_chairs]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_coffee_tables">Coffee Tables</label>
+                                <input type="number" id="inv_coffee_tables" name="inventory[coffee_tables]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_end_tables">End Tables</label>
+                                <input type="number" id="inv_end_tables" name="inventory[end_tables]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_lamps">Lamps</label>
+                                <input type="number" id="inv_lamps" name="inventory[lamps]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_rugs">Rugs</label>
+                                <input type="number" id="inv_rugs" name="inventory[rugs]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_fireplace">Fireplace</label>
+                                <input type="number" id="inv_fireplace" name="inventory[fireplace]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_tvs">TV's</label>
+                                <input type="number" id="inv_tvs" name="inventory[tvs]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_cribs">Cribs</label>
+                                <input type="number" id="inv_cribs" name="inventory[cribs]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_mattress_king">Mattress (King)</label>
+                                <input type="number" id="inv_mattress_king" name="inventory[mattress_king]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_mattress_queen">Mattress (Queen)</label>
+                                <input type="number" id="inv_mattress_queen" name="inventory[mattress_queen]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_mattress_full">Mattress (Full)</label>
+                                <input type="number" id="inv_mattress_full" name="inventory[mattress_full]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_night_stands">Night Stands</label>
+                                <input type="number" id="inv_night_stands" name="inventory[night_stands]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_dressers">Dressers</label>
+                                <input type="number" id="inv_dressers" name="inventory[dressers]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_hi_boys">Hi Boys</label>
+                                <input type="number" id="inv_hi_boys" name="inventory[hi_boys]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_chests">Chests</label>
+                                <input type="number" id="inv_chests" name="inventory[chests]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_stools">Stools</label>
+                                <input type="number" id="inv_stools" name="inventory[stools]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_mirrors">Mirrors</label>
+                                <input type="number" id="inv_mirrors" name="inventory[mirrors]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_book_shelfs">Book Shelfs</label>
+                                <input type="number" id="inv_book_shelfs" name="inventory[book_shelfs]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_file_cabinets">File Cabinets</label>
+                                <input type="number" id="inv_file_cabinets" name="inventory[file_cabinets]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_desk">Desk</label>
+                                <input type="number" id="inv_desk" name="inventory[desk]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_office_chair">Office Chair</label>
+                                <input type="number" id="inv_office_chair" name="inventory[office_chair]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_piano">Piano</label>
+                                <input type="number" id="inv_piano" name="inventory[piano]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_treadmill">Treadmill</label>
+                                <input type="number" id="inv_treadmill" name="inventory[treadmill]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_workout_equipment">Workout Equipment</label>
+                                <input type="number" id="inv_workout_equipment" name="inventory[workout_equipment]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_tv_stands">TV Stands</label>
+                                <input type="number" id="inv_tv_stands" name="inventory[tv_stands]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_bed_frame">Bed frame</label>
+                                <input type="number" id="inv_bed_frame" name="inventory[bed_frame]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_wall_art">Wall Art Small/Large</label>
+                                <input type="number" id="inv_wall_art" name="inventory[wall_art]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_mirrors_2">Mirrors (General)</label>
+                                <input type="number" id="inv_mirrors_2" name="inventory[mirrors_general]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_grill">Grill</label>
+                                <input type="number" id="inv_grill" name="inventory[grill]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_outside_furniture">Outside Furniture</label>
+                                <input type="number" id="inv_outside_furniture" name="inventory[outside_furniture]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_tools">Tools</label>
+                                <input type="number" id="inv_tools" name="inventory[tools]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_tires">Tires</label>
+                                <input type="number" id="inv_tires" name="inventory[tires]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_sport_gear">Sport Gear</label>
+                                <input type="number" id="inv_sport_gear" name="inventory[sport_gear]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_pool_tables">Pool Tables</label>
+                                <input type="number" id="inv_pool_tables" name="inventory[pool_tables]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_atvs">ATVs</label>
+                                <input type="number" id="inv_atvs" name="inventory[atvs]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_lawnmower">Lawnmower</label>
+                                <input type="number" id="inv_lawnmower" name="inventory[lawnmower]" min="0" value="0">
+                            </div>
+                            <div class="inventory-item" role="listitem">
+                                <label for="inv_bicycles">Bicycles (Adult/Children)</label>
+                                <input type="number" id="inv_bicycles" name="inventory[bicycles]" min="0" value="0">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: var(--space-lg);">
+                            <label for="num_boxes">Estimated Number of Boxes<span class="required">*</span></label>
+                            <input type="number" id="num_boxes" name="num_boxes" required aria-required="true" min="0" value="0" style="max-width: 150px;">
+                        </div>
+                    </section>
+
+                    <section class="form-section" aria-labelledby="additional-info-heading">
+                        <h3 id="additional-info-heading">7. Additional Information</h3>
+                        <div class="form-group">
+                            <label for="additional_info">Any other requests, concerns, or details about your move?</label>
+                            <textarea id="additional_info" name="additional_info" rows="4" placeholder="E.g., specific fragile items, parking restrictions, storage needs..."></textarea>
+                        </div>
+                    </section>
+
+                    <div class="submit-button-container">
+                        <button type="submit" class="cta-button" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;"> Get My Free Estimate </button>
+                    </div>
+
+                    <section class="terms-box" aria-labelledby="terms-heading">
+                        <h4 id="terms-heading">Terms and Conditions of Estimate</h4>
+                        <ol>
+                            <li><strong>Non-Binding Estimate:</strong> The estimate provided is based on the information given at the time of inquiry. This estimate is not a guaranteed price and is subject to change based on factors such as additional items, time required, unforeseen circumstances, or changes to the moving conditions.</li>
+                            <li><strong>Accuracy of Inventory & Details:</strong> The customer is responsible for providing an accurate description of the inventory, access conditions (stairs, elevators, long carry distances, etc.), and any special handling requirements. Any discrepancies may result in additional charges.</li>
+                            <li><strong>Hourly & Flat Rate Pricing:</strong>
+                                <ul>
+                                    <li>Hourly rates apply from the time our crew arrives at the pickup location until the completion of the move, including loading, unloading, and any required travel time.</li>
+                                    <li>Flat-rate pricing, if applicable, is based on the agreed-upon scope of work and does not cover additional services requested on the moving day.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Additional Charges:</strong> The following may result in extra charges:
+                                <ul>
+                                    <li>Additional items or services not included in the original estimate</li>
+                                    <li>Disassembly/reassembly of furniture</li>
+                                    <li>Packing/unpacking services</li>
+                                    <li>Long carry distances, stairs, or elevator use not disclosed prior</li>
+                                    <li>Delays caused by the customer (waiting time, incomplete packing, lack of access, etc.)</li>
+                                    <li>Storage fees if items need to be held before delivery</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cancellation & Rescheduling Policy:</strong>
+                                <ul>
+                                    <li>Cancellations made less than 48 hours before the scheduled move may be subject to a cancellation fee.</li>
+                                    <li>Rescheduling is subject to availability and may affect the final cost.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </section>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-columns" role="complementary">
+                <div class="footer-column" aria-labelledby="company-info">
+                    <h3 id="company-info" class="footer-title">A GOOD GUY MOVING LTD.</h3>
+                    <p class="tagline">We take the stress out of moving</p>
+                    <img src="logos/White logo - no background.png"
+                         alt="A Good Guy Moving Ltd. Logo"
+                         class="footer-logo logo-image"
+                         width="150"
+                         height="60"
+                         loading="lazy">
+                </div>
+                <div class="footer-column" aria-labelledby="hours-info">
+                    <h3 id="hours-info" class="footer-title">OFFICE HOURS</h3>
+                    <dl class="hours-list">
+                        <dt>Monday to Friday</dt>
+                        <dd>9:00 am to 5:00 pm</dd>
+                        <dt>Saturdays</dt>
+                        <dd>Noon to 4:00 p.m.</dd>
+                    </dl>
+                </div>
+                <div class="footer-column" aria-labelledby="contact-info">
+                    <h3 id="contact-info" class="footer-title">CONTACT US</h3>
+                    <address>
+                        <strong>Jeffrey Robson - Estimates</strong><br>
+                        <a href="tel:+14034379441" aria-label="Call us at 403-437-9441">Phone: (403) 437-9441</a><br>
+                        <a href="mailto:jeffreyrobson@agoodguymoving.com" aria-label="Email us">Email: jeffreyrobson@agoodguymoving.com</a>
+                    </address>
+                </div>
+                <div class="footer-column" aria-labelledby="social-info">
+                    <h3 id="social-info" class="footer-title">GET SOCIAL</h3>
+                    <div class="social-icons" aria-label="Social media links">
+                        <a href="https://www.facebook.com/agoodguymoving/"
+                           class="social-icon"
+                           aria-label="Visit our Facebook page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/agoodguymovingltd/"
+                           class="social-icon"
+                           aria-label="Visit our Instagram page"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright" role="contentinfo">
+                <p lang="en">&copy; <time datetime="2025">2025</time> A Good Guy Moving Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Function to show/hide the 'number of flights' input based on radio button selection
-        function toggleFlightsInput(locationPrefix, show) {
-            const container = document.getElementById(`${locationPrefix}_flights_container`);
-            const input = document.getElementById(`${locationPrefix}_flights`);
-            if (!container || !input) return; // Exit if elements don't exist
-
-            if (show) {
-                container.classList.remove('hidden-conditional');
-                container.style.display = 'block'; // Or 'flex', 'inline-block' depending on layout needs
-            } else {
-                container.classList.add('hidden-conditional');
-                container.style.display = 'none';
-                input.value = ''; // Clear the value if hidden
-            }
+    <!-- Include ARIA landmark for skiplink target -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            padding: 8px;
+            z-index: 100;
+            background: #fff;
+            color: #000;
         }
-
-        // Initialize the state and add validation logic on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize flight input visibility
-            toggleFlightsInput('current', document.querySelector('input[name="current_stairs"][value="Yes"]:checked') !== null);
-            toggleFlightsInput('new', document.querySelector('input[name="new_stairs"][value="Yes"]:checked') !== null);
-
-            const form = document.getElementById('moving-estimate-form');
-            if (form) {
-                const timeCheckboxes = form.querySelectorAll('input[name="move_time[]"]');
-
-                form.addEventListener('submit', function(event) {
-                    let timeChecked = false;
-                    timeCheckboxes.forEach(checkbox => {
-                        if (checkbox.checked) {
-                            timeChecked = true;
-                        }
-                    });
-
-                    // Clear previous errors
-                    const errorFields = form.querySelectorAll('.error-highlight');
-                    errorFields.forEach(el => el.classList.remove('error-highlight'));
-                    const errorFieldsets = form.querySelectorAll('fieldset.error-highlight');
-                    errorFieldsets.forEach(fs => fs.classList.remove('error-highlight'));
-
-
-                    let firstErrorElement = null;
-                    let allRequiredFilled = true;
-
-                     // Check required fields
-                     const requiredFields = form.querySelectorAll('[required]');
-                     requiredFields.forEach(field => {
-                        let fieldGroupValid = true;
-                        if (field.type === 'radio') {
-                            const radioGroupName = field.name;
-                            if (!form.querySelector(`input[name="${radioGroupName}"]:checked`)) {
-                                allRequiredFilled = false;
-                                fieldGroupValid = false;
-                                // Highlight the group label or fieldset
-                                const groupElement = field.closest('.form-group') || field.closest('fieldset');
-                                if(groupElement) {
-                                     groupElement.classList.add('error-highlight');
-                                     if (!firstErrorElement) firstErrorElement = groupElement;
-                                }
-                            }
-                        } else if (field.type === 'checkbox') {
-                             // Specific validation for time checkboxes handled below
-                             if (field.name !== 'move_time[]' && !field.checked) {
-                                // Add logic for other required checkboxes if any
-                             }
-                        } else if (!field.value.trim()) {
-                            allRequiredFilled = false;
-                            fieldGroupValid = false;
-                            field.classList.add('error-highlight');
-                            if (!firstErrorElement) firstErrorElement = field;
-                        }
-
-                     });
-
-                    // Check time checkbox group specifically
-                    if (!timeChecked) {
-                        allRequiredFilled = false;
-                        const timeGroup = timeCheckboxes[0].closest('.checkbox-group');
-                        if(timeGroup) {
-                             timeGroup.classList.add('error-highlight');
-                             if (!firstErrorElement) firstErrorElement = timeGroup;
-                        }
-                    }
-
-                    if (!allRequiredFilled) {
-                         alert('Please fill out all required fields marked with *. Check highlighted areas.');
-                         if (firstErrorElement) {
-                             firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                         }
-                         event.preventDefault(); // Prevent form submission
-                         return false;
-                    }
-                });
-
-                // Add style for error highlighting
-                const style = document.createElement('style');
-                style.textContent = `
-                    .error-highlight, .error-highlight input, .error-highlight textarea, .error-highlight select {
-                        border-color: var(--color-error) !important;
-                    }
-                    fieldset.error-highlight {
-                         border: 1px solid var(--color-error) !important;
-                    }
-                    .checkbox-group.error-highlight > label:first-of-type {
-                         color: var(--color-error); /* Highlight the group label */
-                    }
-                     .radio-group.error-highlight > label:first-of-type {
-                         color: var(--color-error); /* Highlight the group label */
-                    }
-                `;
-                document.head.appendChild(style);
-            } // end if(form)
-        });
-
-    </script>
-
+        .skip-link:focus {
+            top: 0;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 </body>
 </html>
