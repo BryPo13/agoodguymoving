@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://www.facebook.com; connect-src 'self' https://api.netlify.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.facebook.com;">
+
     <meta name="description" content="Explore our comprehensive moving services in Calgary, Alberta, including full pack & move, storage solutions, and specialty item moving. Get a free estimate for your next move in Calgary.">
     <meta name="keywords" content="moving services Calgary, packing service Calgary, storage solutions Calgary, junk removal Calgary, specialty item moving Calgary, commercial moving Calgary, loading and unloading Calgary, Calgary movers, Alberta movers">
     <meta name="author" content="A Good Guy Moving Ltd.">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Moving Services | A Good Guy Moving Ltd. - Calgary, Alberta">
     <meta property="og:description" content="Explore our comprehensive moving services in Calgary, Alberta, including full pack & move, storage solutions, and specialty item moving. Get a free estimate for your next move in Calgary.">
-    <meta property="og:image" content="/logos/Color_logo_no_background.png">
-    <meta property="og:url" content="https://www.agoodguymoving.com/services.html">
+    <meta property="og:image" content="/logos/Color_logo_no_background.png"> <meta property="og:url" content="https://www.agoodguymoving.com/services.html">
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NTXMQTZYEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-NTXMQTZYEF');
+    </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '696053806343910');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=696053806343910&ev=PageView&noscript=1"
+    /></noscript>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="canonical" href="https://www.agoodguymoving.com/services.html">
@@ -22,7 +46,6 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 
-    <!-- Preload critical assets -->
     <link rel="preload" href="logos/Color_logo_no_background.png" as="image">
 </head>
 <body>
