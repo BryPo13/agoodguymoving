@@ -20,9 +20,7 @@
     # This is more secure but requires all JS/CSS to be in external files
     # or <style> blocks in <head>. Inline styles/scripts will be blockedo.
 
-
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.netlify.com;"
-
+Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://connect.facebook.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://www.facebook.com; connect-src 'self' https://api.netlify.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.facebook.com;"
 # [[redirects]] section removed - Netlify handles 404s automatically
 # if a 404.html file exists in the publish directory.
 # Ensure you have a 404.html file in your root directory ('.').
